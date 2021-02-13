@@ -1,0 +1,661 @@
+/*pc端*/
+ul, li {
+    list-style: none;
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+p, body {
+    margin: 0;
+}
+
+div {
+    /*border-box令宽高包括padding的设置*/
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+}
+
+/*字体*/
+.fz12 {
+    font-size: 12px;
+}
+
+.fz14 {
+    font-size: 14px;
+}
+
+.fz16 {
+    font-size: 16px;
+}
+
+.fz20 {
+    font-size: 20px;
+}
+
+.ff-din{
+    font-family: DIN Alternate Bold,PingFangSC-Medium,PingFang SC;
+}
+
+.pr{
+    position: relative;
+}
+
+.pa{
+    position: absolute;
+}
+
+/*分割线*/
+.split {
+    width: 100%;
+    height: 24px;
+    background: #F5F7FA;
+}
+
+/*表格用的短竖线*/
+.line {
+    width: 1px;
+    height: 14px;
+    border-left: 1px solid #E9E9E9;
+    margin-right: 8px;
+}
+
+/*表格标题*/
+.el-table__header .cell {
+    font-weight: 700;
+    letter-spacing: 0.5pt;
+}
+
+/*隐藏elemnt-ui自带的表格为空提示*/
+.defaultPage .el-table__empty-block{
+    display: none!important;
+}
+
+/*信息提示弹框*/
+.el-message {
+    font-size: 14px;
+    border: none !important;
+    background: #FFF !important;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.el-message--info .el-message__content{
+    color: #333;
+}
+
+.el-message-box .el-message-box__title{
+    font-size: 16px!important;
+}
+
+.el-message-box .el-button--primary{
+    color: #FFF!important;
+    background: #00C191;
+}
+
+.el-message-box .el-button--primary:hover{
+    color: #FFF!important;
+    border: none!important;
+}
+
+
+/*ui库的树形选择器直接添加在body中，所以要在全局改变样式*/
+.tree-select .el-select-dropdown__item {
+    padding: 0;
+}
+
+.tree-select .el-tree-node__content {
+    height: 34px;
+    font-weight: normal;
+}
+
+/*选择器*/
+.el-select-dropdown__item.selected {
+    font-weight: 700;
+}
+
+.el-select-dropdown__item {
+    color: #666;
+}
+
+/*遮罩层自带overflow:auto,所以要把它取消*/
+.el-dialog__wrapper {
+    overflow: hidden!important;
+}
+
+.el-dialog__body {
+    padding-left: 24px;
+    color: #333;
+}
+
+.el-dialog__header {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    z-index: 10;
+    background: #FFF;
+    /*height: 55px;*/
+    color: #333;
+    font-size: 16px;
+    font-weight: 500!important;
+    padding: 15px 28px 15px 40px !important;
+    /*padding: 20px 28px 20px 40px!important;*/
+    border-bottom: 1px solid #E9E9E9;
+}
+
+/*弹窗全局：标题字号16*/
+.el-dialog__title {
+    font-size: 16px;
+    letter-spacing: 0.5pt;
+}
+
+/*小型对话框*/
+.dialog .el-dialog {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -65%);
+    width: 640px;
+    border-radius: 4px;
+    box-shadow: 0 3px 7px rgba(0, 0, 0, .1);
+    margin: 0 !important;
+}
+
+
+/*表单标签*/
+.el-form-item__label {
+    color: #333 !important;
+    padding: 0 !important;
+}
+
+/*必填项的星号*/
+.required .el-form-item__label::before {
+    content: '*';
+    color: #DC5C53;
+    font-size: 16px;
+}
+
+/*底部按钮*/
+.button-bg {
+    width: 100%;
+    height: 60px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+    background: #FFFFFF;
+    display: flex;
+    padding: 12px 0;
+    border-top: 1px solid #F5F7FA;
+}
+
+.button-print{
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: 224px;            /*侧边栏200+24*/
+}
+
+.button-control {
+    position: absolute;
+    right: 126px;
+}
+
+.button-control .el-button{
+    padding: 10px 20px;
+}
+
+
+.el-button--default {
+    border: 1px solid #D9D9D9 !important;
+    color: #666 !important;
+}
+
+.el-button--default:hover {
+    border: 1px solid #D9D9D9 !important;
+    background: #FFF !important;
+    color: #666 !important;
+}
+
+.el-button--default:active {
+    border: 1px solid #D9D9D9 !important;
+    background: #F1F6FA !important;
+    color: #666 !important;
+}
+
+.el-button--primary {
+    border: none !important;
+}
+
+.el-button--primary:hover {
+    background: #00B588 !important;
+}
+
+.el-button--primary:active {
+    background: #00A87E !important;
+}
+
+
+/*侧边栏样式*/
+.el-menu--vertical {
+    left: 52px !important;
+}
+
+/*侧边栏的标题hover的时候背景颜色改变*/
+.el-menu--vertical .el-menu-item:hover{
+    background: linear-gradient(to right,rgba(3,170,114,.15) 0%,rgba(5,184,124,.15) 100%);
+}
+
+/*标题前面的竖线,没有被hover的时候不显示，hover的时候才显示*/
+.el-menu--vertical .el-menu-item::before{
+    content: '';
+    display: inline-block;
+    width: 1px;
+    height: 45px;
+    background: #05B77B;
+    position: relative;
+    left: -20px;
+    float: left;
+    opacity: 0;
+}
+
+.el-menu--vertical .el-menu-item:hover::before{
+    opacity: 1;
+}
+
+.el-menu-item.is-active {
+    background: linear-gradient(to right, #03AA72 0%, #05B87C 100%) !important;
+}
+
+.el-menu--popup-right-start {
+    margin: 0;
+}
+
+.el-menu--popup {
+    padding: 0;
+}
+.el-submenu__title:hover {
+    background-color: rgb(45, 48, 56)
+}
+/*侧边栏样式*/
+
+
+/*分页器start*/
+.pagination {
+    height: 32px;
+    margin-top: 16px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+/*去掉跳转的左边距*/
+.el-pagination__jump {
+    margin: 0;
+}
+
+.pagination .el-pager .number, .pagination .el-icon-more,.pagination .btn-next, .pagination .btn-prev {
+    min-width: 30px;
+    border: 1px solid #D9D9D9;
+    background: #FFFFFF!important;
+    padding: 0;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+/*跳转按钮选中时的背景*/
+.pagination .el-pager .active{
+    background: #00C191!important;
+}
+
+.pagination .el-icon-more, .pagination .btn-next, .pagination .btn-prev {
+    background: #FFFFFF !important;
+    border-radius: 4px !important;
+}
+
+
+.pagination .el-pagination .el-input__inner, .pagination .el-pagination__total, .pagination .el-pagination__jump {
+    font-size: 12px;
+    font-weight: normal;
+    color: #606266;
+}
+/*分页器end*/
+
+
+/*协同窗口遮罩层*/
+.jointMask {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 100;
+    background: transparent;
+}
+
+/*列表协同窗口外层div*/
+.shareDiv {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 101;
+}
+
+/*详情协同弹窗外层div*/
+.share-detail {
+    position: fixed;
+    bottom: 5px;
+    right: 18px;
+    z-index: 101;
+}
+
+/*筛选弹窗遮罩层*/
+.detailMask{
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 100;
+    background: transparent;
+}
+
+/*协同莫名出现个24px的右边距*/
+.joint{
+    margin-right: 0!important;
+}
+
+/*选择客户、供应商、员工名称的输入框*/
+/*如果是在局部样式里则要在各个前面加/deep/*/
+.person-name input::-webkit-input-placeholder {
+    color: #00C191;
+}  /*webkit 内核浏览器*/
+
+.person-name input::-moz-placeholder {
+    color: #00C191;
+}  /*Mozilla Firefox 19+*/
+
+.person-name input:-moz-placeholder {
+    color: #00C191;
+}  /*Mozilla Firefox 4 to 18*/
+
+.person-name input:-ms-input-placeholder {
+    color: #00C191;
+}  /*Internet Explorer 10+*/
+
+.person-name .el-input__inner {
+    cursor: pointer;
+    color: #00C191;
+}
+
+/*新增收款方式*/
+.new-way {
+    font-size: 12px;
+    color: #00C191;
+    margin-left: 4px;
+    cursor: pointer;
+}
+
+/*上传中的loading*/
+.el-loading-spinner {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/*input框固定高度*/
+.el-form-item__label, .el-input__inner {
+    height: 32px !important;
+    line-height: 32px !important;
+}
+
+.el-form-item__content {
+    line-height: 32px !important;
+}
+
+/*页面input框间距*/
+.el-form-item {
+    margin-bottom: 16px !important;
+}
+
+/*设置弹窗中input框间距*/
+.el-dialog .el-form-item {
+    margin-bottom: 16px !important;
+}
+
+/*下拉框居中对齐*/
+.el-input__icon {
+    line-height: 32px!important;
+}
+
+/*日期筛选框*/
+.el-date-table td.in-range div, .el-date-table td.in-range div:hover, .el-date-table.is-week-mode .el-date-table__row.current div, .el-date-table.is-week-mode .el-date-table__row:hover div {
+    background-color: #EFFBFA;
+}
+
+/*处理溢出换行样式*/
+.line-break-item {
+    display: flex;
+}
+
+.line-break-item span:first-child{
+    white-space: nowrap;
+}
+
+/*单行文本溢出处理*/
+.limit-single-line {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis!important;
+}
+
+/*两行文本溢出处理*/
+.limit-double-line {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+/*三行文本溢出处理*/
+.limit-multi-line {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+/*日期时间选择器*/
+.el-picker-panel__footer .el-button:first-child:hover{
+    color: #fff;
+}
+
+/*直接出现*/
+.peer-enter-active, .peer-leave-active {
+    transition: 0.3s cubic-bezier(0, .9, .36, 1);
+}
+
+.peer-enter, .peer-leave-to {
+    opacity: 0;
+}
+
+.explainDialogOne {
+    position: absolute;
+    padding: 0 14px;
+    width: fit-content;
+    height: 44px;
+    line-height: 44px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #666;
+    background-color: #fff;
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.08);
+    z-index: 2;
+}
+
+/*浮层*/
+.popup-detail{
+    /*用absolute的话当在表格边缘的时候会被表格挡住*/
+    position: fixed;
+    color: #333;
+    background: #fff;
+    z-index: 1;
+    max-width: 400px;
+    font-size: 12px;
+    padding: 10px;
+    line-height: 18px;
+    border-radius: 3px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+/*垂直居中*/
+.v-center{
+    display: flex;
+    align-items: center;
+}
+
+/*设置flex布局*/
+.flex-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.flex-between{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flex-baseline{
+    display: flex;
+    align-items: baseline;
+}
+
+/*字体颜色*/
+.cl9{
+    color: #999;
+}
+
+.cl6{
+    color: #666;
+}
+
+.cl3 {
+    color: #333;
+}
+
+.cl0 {
+    color: #000;
+}
+
+.fw500 {
+    font-weight: 500;
+}
+
+.cl-green{
+    color: #00C191;
+}
+
+.cl-orange{
+    color: #FF7A20;
+}
+
+.bold{
+    font-weight: 500;
+}
+
+/*定位*/
+.ta-center {
+    text-align: center;
+}
+
+.ta-right {
+    text-align: right;
+}
+
+.filterPanel {
+    align-items: center;
+}
+
+.filterPanel > div, .filterPanel > form {
+    margin: 0 16px 0 0 !important;
+}
+
+.filterPanel .el-date-editor {
+    margin-right: 0 !important;
+}
+
+.filterPanel .el-form .el-form-item__content {
+    width: 180px;
+}
+
+.filterPanel .el-form .el-form-item .el-form-item__label {
+    font-weight: 500;
+}
+
+.filterPanel .el-form.el-form--inline {
+    line-height: 14px;
+}
+
+.filterPanel .el-form .el-form-item {
+    margin-right: 0 !important;
+    margin-bottom: 0 !important;
+    display: flex;
+}
+
+/*员工等三级选择器*/
+.company-item > .el-select-group__title{
+    font-size: 14px;
+}
+
+/*当侧边栏收起时，给首页和微商城标题栏设置样式*/
+.el-tooltip__popper[x-placement^=right]{
+    width: 195px;
+    height: 45px;
+    background-color: rgb(30, 32, 37)!important;
+    padding-left: 20px;
+    border-radius: 0;
+    left: 40px!important;
+    line-height: 24px;
+    font-size: 14px;
+}
+
+/*框框前面的竖线，没有被Hover的时候不显示，hover的时候才显示*/
+.el-tooltip__popper[x-placement^=right]::before{
+    content: '';
+    display: inline-block;
+    width: 1px;
+    height: 45px;
+    background: #05B77B;
+    position: relative;
+    left: -20px;
+    top: -10px;
+    float: left;
+    opacity: 0;
+}
+
+.el-tooltip__popper[x-placement^=right]:hover::before{
+    opacity: 1;
+}
+
+.el-tooltip__popper[x-placement^=right]:hover{
+    background: linear-gradient(to right,rgba(3,170,114,.15) 0%,rgba(5,184,124,.15) 100%);
+}
+
+/*方框前面的箭头不显示*/
+.el-tooltip__popper[x-placement^=right] .popper__arrow{
+    display: none!important;
+}
+
+/*解决bug：品种详情弹窗中点击放大图片，放大后的图片会被弹窗挡住，因为pswp的z-index默认是1500，而弹窗的z-index默认是2000，而且新的弹窗会比旧的弹窗多加1*/
+.pswp{
+    z-index: 2050;
+}

@@ -2,22 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d55bdcc2-34d5-4ae5-aaef-cc2de416f6f2" name="默认更改列表" comment="">
-      <change beforePath="$PROJECT_DIR$/app/.eslintrc.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/.eslintrc.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/router/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/store/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pc/.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/pc/.editorconfig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pc/src/article/articleList.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pc/src/article/articleNew.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pc/src/bread.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pc/src/components/Avatar.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pc/src/components/Header.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pc/src/components/pathHeader.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pc/src/equipment/equipmentList.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pc/src/equipment/equipmentNew.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pc/src/hero/heroList.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pc/src/hero/heroNew.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pc/src/hero/skinList.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pc/src/hero/skinNew.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pc/src/pc.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pc/src/pc_public.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pc/src/strategy/strategyList.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pc/src/strategy/strategyNew.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pc/.eslintrc.js" beforeDir="false" afterPath="$PROJECT_DIR$/pc/.eslintrc.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pc/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/pc/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pc/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/pc/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pc/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pc/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pc/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pc/src/main.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pc/src/components/HelloWorld.vue" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/pc/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/pc/src/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pc/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pc/src/router/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pc/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pc/src/store/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pc/src/views/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pc/src/views/Home.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pc/src/views/About.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pc/src/views/Home.vue" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +36,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="CSS File" />
+        <option value="Vue Single File Component" />
         <option value="JavaScript File" />
       </list>
     </option>
@@ -42,7 +53,8 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/workspace/dxsf" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/pc/src/components" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -53,6 +65,11 @@
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.HTML" />
     <property name="ts.external.directory.path" value="D:\WebStorm 2020.2.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Henry\node-vue\node-vue\pc\src\components" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -65,7 +82,8 @@
       <workItem from="1613117437486" duration="398000" />
       <workItem from="1613117843219" duration="1914000" />
       <workItem from="1613120093844" duration="45000" />
-      <workItem from="1613120694952" duration="1357000" />
+      <workItem from="1613120694952" duration="13017000" />
+      <workItem from="1613182854991" duration="11193000" />
     </task>
     <servers />
   </component>
@@ -73,17 +91,29 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1613121370504">
+    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1613130655342">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1613121370504" />
-    <state x="750" y="221" key="RollbackChangesDialog" timestamp="1613119615910">
+    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1613130655342" />
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1613131146272">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="750" y="221" key="RollbackChangesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1613119615910" />
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1613131146272" />
+    <state x="750" y="221" key="RollbackChangesDialog" timestamp="1613129022233">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="750" y="221" key="RollbackChangesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1613129022233" />
     <state x="461" y="164" key="SettingsEditor" timestamp="1613121043617">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1613121043617" />
+    <state x="692" y="252" width="535" height="536" key="find.popup" timestamp="1613129871718">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="692" y="252" width="535" height="536" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1613129871718" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1613201462378">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1613201462378" />
   </component>
 </project>
