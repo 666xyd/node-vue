@@ -3,7 +3,7 @@
         <div class="list-content">
             <div class="list-form al-center">
                 <add-button title="新增分类" @add="add"></add-button>
-                <search title="搜索分类名称"></search>
+                <search title="搜索分类名称" v-model="searchText" @search="search"></search>
             </div>
 
             <!-- 分类列表 -->
@@ -74,6 +74,7 @@
                 page: 1,                       //页码
                 isEdit: false,                 //是否要编辑
                 editItem: {},                  //编辑的对象
+                searchText: '',                //搜索的内容
             }
         },
         created() {
@@ -114,6 +115,22 @@
                     });
                     this.getClassifyList();
                 })
+            },
+
+            //搜索框搜索
+            search(){
+                this.$nextTick(()=>{
+                    if(this.searchText){
+                        //有搜索内容
+                        this.$http.get(`rest/heroCategories/classify/${this.searchText}`).then((res)=>{
+                            this.list = res.data;
+                        })
+                    }else{
+                        //清空搜索内容
+                        this.getClassifyList();
+                    }
+                })
+
             },
 
             //新增分类点击保存时刷新列表

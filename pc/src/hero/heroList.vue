@@ -3,7 +3,7 @@
         <div class="list-content">
             <div class="list-form al-center">
                 <AddButton title="新增分类" :cmb="false" @add="add"></AddButton>
-                <Search title="搜索英雄名称"></Search>
+                <Search title="搜索英雄名称" @search="search" v-model="searchText"></Search>
             </div>
 
             <!-- 英雄分类及列表 -->
@@ -87,6 +87,7 @@
                     page: 1,     //页码
                     category_id: 0,
                 },
+                searchText: '',      //搜索框内容
             }
         },
         created() {
@@ -114,19 +115,35 @@
             getHeroList(){
                 this.$http.get('rest/heroInfo').then((res)=>{
                     this.heroList = res.data;
-                    window.console.log(this.heroList);
                 })
             },
             //点击树形控件
             handleNodeClick(val) {
+                this.searchText = '';
                 if(val.id === 0){
                     //点击的是'全部'
                     this.getHeroList();
                 }else {
-                    this.$http(`rest/heroInfo/${val.name}`).then((res)=>{
+                    this.$http(`rest/heroInfo/classify/${val.name}`).then((res)=>{
                         this.heroList = res.data;
                     })
                 }
+            },
+            //搜索框搜索
+            search(){
+                //这里需要nexttick，不用的话点清空搜索内容时，仍然停留在搜索内容的结果
+                this.$nextTick(()=>{
+                    if(this.searchText){
+                        //有输入内容
+                        this.$http(`rest/heroInfo/name/${this.searchText}`).then((res)=>{
+                            this.heroList = res.data;
+                            this.getClassifyList(); //这一步的目的主要是为了让树形回到‘全部’
+                        })
+                    }else{
+                        //内容清空
+                        this.getHeroList();
+                    }
+                })
             },
             //新建分类时点击保存
             success(){
