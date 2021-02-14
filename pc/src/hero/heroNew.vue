@@ -1,6 +1,6 @@
 <template>
-    <div>
-        这是新增英雄页面
+    <div class="hero-new">
+
     </div>
 </template>
 

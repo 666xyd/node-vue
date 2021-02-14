@@ -62,6 +62,10 @@
                                 url: 'heroNew',
                             },
                             {
+                                name: '分类列表',
+                                url: 'heroClassify',
+                            },
+                            {
                                 name: '皮肤列表',
                                 url: 'skinList',
                             },

@@ -2,6 +2,7 @@ export default {
     //英雄管理
     heroList: {title: '英雄列表', text: '记录所有英雄的信息，可对英雄进行增删查改等操作'},
     heroNew: {title: '新增英雄', text: '记录新英雄的分类、操作难度、定位等信息'},
+    heroClassify: {title: '分类列表', text: '记录所有英雄的分类，可对英雄分类进行增删查改等操作'},
     heroEdit: {title: '编辑英雄', text: '修改英雄的信息'},
     skinList: {title: '皮肤列表', text: ''},
     skinNew: {title: '新增皮肤', text: ''},

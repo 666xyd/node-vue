@@ -71,6 +71,12 @@ a{
     letter-spacing: 0.5pt;
 }
 
+/*设置所有表头的背景颜色和字体颜色*/
+.el-table th{
+    background-color: #F5F7FA!important;
+    color: #333!important;
+}
+
 /*隐藏elemnt-ui自带的表格为空提示*/
 .defaultPage .el-table__empty-block{
     display: none!important;
@@ -94,7 +100,7 @@ a{
 
 .el-message-box .el-button--primary{
     color: #FFF!important;
-    background: #00C191;
+    background: #00C191!important;
 }
 
 .el-message-box .el-button--primary:hover{
@@ -229,6 +235,7 @@ a{
 
 .el-button--primary {
     border: none !important;
+    background-color: #00C191!important;;
 }
 
 .el-button--primary:hover {
@@ -326,33 +333,6 @@ a{
 /*分页器end*/
 
 
-/*协同窗口遮罩层*/
-.jointMask {
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    z-index: 100;
-    background: transparent;
-}
-
-/*列表协同窗口外层div*/
-.shareDiv {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 101;
-}
-
-/*详情协同弹窗外层div*/
-.share-detail {
-    position: fixed;
-    bottom: 5px;
-    right: 18px;
-    z-index: 101;
-}
-
 /*筛选弹窗遮罩层*/
 .detailMask{
     position: fixed;
@@ -362,42 +342,6 @@ a{
     bottom: 0;
     z-index: 100;
     background: transparent;
-}
-
-/*协同莫名出现个24px的右边距*/
-.joint{
-    margin-right: 0!important;
-}
-
-/*选择客户、供应商、员工名称的输入框*/
-/*如果是在局部样式里则要在各个前面加/deep/*/
-.person-name input::-webkit-input-placeholder {
-    color: #00C191;
-}  /*webkit 内核浏览器*/
-
-.person-name input::-moz-placeholder {
-    color: #00C191;
-}  /*Mozilla Firefox 19+*/
-
-.person-name input:-moz-placeholder {
-    color: #00C191;
-}  /*Mozilla Firefox 4 to 18*/
-
-.person-name input:-ms-input-placeholder {
-    color: #00C191;
-}  /*Internet Explorer 10+*/
-
-.person-name .el-input__inner {
-    cursor: pointer;
-    color: #00C191;
-}
-
-/*新增收款方式*/
-.new-way {
-    font-size: 12px;
-    color: #00C191;
-    margin-left: 4px;
-    cursor: pointer;
 }
 
 /*上传中的loading*/
@@ -516,8 +460,12 @@ a{
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
 }
 
+.flex{
+    display: flex;
+}
+
 /*垂直居中*/
-.v-center{
+.al-center{
     display: flex;
     align-items: center;
 }
@@ -528,6 +476,7 @@ a{
     justify-content: center;
     align-items: center;
 }
+
 .flex-between{
     display: flex;
     justify-content: space-between;
@@ -658,4 +607,12 @@ a{
 /*解决bug：品种详情弹窗中点击放大图片，放大后的图片会被弹窗挡住，因为pswp的z-index默认是1500，而弹窗的z-index默认是2000，而且新的弹窗会比旧的弹窗多加1*/
 .pswp{
     z-index: 2050;
+}
+
+
+/*初始化*/
+.initMain{
+    background-color: white;
+    margin: 20px;
+    padding: 24px;
 }

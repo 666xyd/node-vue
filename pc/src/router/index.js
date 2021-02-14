@@ -5,6 +5,7 @@ import Pc from '../main.vue';
 //英雄管理
 import heroList from '../hero/heroList';                  //英雄列表
 import heroNew from '../hero/heroNew';                    //新增英雄
+import heroClassify from "../hero/heroClassify";          //分类列表
 import skinList from '../hero/skinList';                  //皮肤列表
 import skinNew from "../hero/skinNew";                    //新增皮肤
 
@@ -27,8 +28,9 @@ const routes = [
         path: '/pc', component: Pc,
         children: [
             //英雄管理
-            {path: 'hero/list', name: 'heroList', component: heroList,},        //英雄列表
+            {path: 'hero/list', name: 'heroList', component: heroList,},       //英雄列表
             {path: 'hero/new', name: 'heroNew', component: heroNew},           //新增英雄
+            {path: 'hero/classify', name: 'heroClassify', component: heroClassify},                     //分类列表
             {path: 'skin/List', name: 'skinList', component: skinList},        //皮肤列表
             {path: 'skin/new', name: 'skinNew', component: skinNew},           //新增皮肤
 
