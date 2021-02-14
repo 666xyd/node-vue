@@ -17,8 +17,15 @@ module.exports = app => {
         res.send(list);
     })
 
-    router.get('/:name', async (req, res) => {
-        const list = await req.Model.find({"classify": req.params.name});
+    //根据英雄分类返回不同的列表
+    router.get('/classify/:classify', async (req, res) => {
+        const list = await req.Model.find({"classify": {$regex: req.params.classify}});
+        res.send(list);
+    })
+
+    //根据英雄姓名返回信息
+    router.get('/name/:name', async (req, res) => {
+        const list = await req.Model.find({"name": {$regex: req.params.name}});
         res.send(list);
     })
 

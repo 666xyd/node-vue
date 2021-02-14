@@ -2,18 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d55bdcc2-34d5-4ae5-aaef-cc2de416f6f2" name="默认更改列表" comment="">
-      <change afterPath="$PROJECT_DIR$/pc/src/components/HeroPic.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pc/src/hero/components/getWayNew.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/models/HeroGetWay.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/models/HeroInfo.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pc/src/hero/components/classifyNew.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pc/src/hero/components/classifyNew.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pc/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/pc/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pc/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/pc/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pc/src/hero/heroClassify.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pc/src/hero/heroClassify.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pc/src/hero/heroList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pc/src/hero/heroList.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pc/src/hero/heroNew.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pc/src/hero/heroNew.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/models/category.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/HeroCategory.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/routes/admin/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/admin/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -83,7 +76,7 @@
       <workItem from="1613120694952" duration="13017000" />
       <workItem from="1613182854991" duration="14230000" />
       <workItem from="1613206674643" duration="9527000" />
-      <workItem from="1613268984077" duration="31373000" />
+      <workItem from="1613268984077" duration="35579000" />
     </task>
     <servers />
   </component>
@@ -118,9 +111,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="692" y="252" width="535" height="536" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1613310550099" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1613278170753">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1613316259159">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1613278170753" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1613316259159" />
   </component>
 </project>
