@@ -82,12 +82,13 @@
         methods: {
             //新增分类
             add(){
+                this.isEdit = false;
                 this.popupShow = true;
             },
 
             //获取分类列表
             getClassifyList(){
-                this.$http.get('categories').then((res)=>{
+                this.$http.get('rest/heroCategories').then((res)=>{
                     this.list = res.data;
                 })
             },
@@ -106,7 +107,7 @@
                     cancelButtonText: '取消',
                     type: 'warning'
                 }).then( async () => {
-                    let res = await this.$http.delete(`categories/${row._id}`)
+                    let res = await this.$http.delete(`rest/heroCategories/${row._id}`)
                     this.$message({
                         type: 'success',
                         message: '删除成功!'

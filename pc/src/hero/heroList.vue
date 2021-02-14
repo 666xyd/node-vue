@@ -15,7 +15,8 @@
                         <div style="overflow: hidden">
                             <transition name="fade">
                                 <!-- 树形控件 -->
-                                <el-tree ref="elTree" :data="classifyList" :props="defaultProps"></el-tree>
+                                <el-tree ref="elTree" node-key="id" :data="heroTypeList" :props="defaultProps"
+                                         @node-click="handleNodeClick"></el-tree>
                             </transition>
                         </div>
                     </div>
@@ -23,14 +24,35 @@
 
                 <!-- 右侧英雄列表 -->
                 <div class="list" style="width: calc(100% - 180px)">
-                    <el-table>
-                        <el-table-column label="英雄名称">
-
+                    <el-table :data="heroList">
+                        <el-table-column label="英雄名称" min-width="15%">
+                            <template slot-scope="scope">
+                                {{scope.row.name}}
+                            </template>
                         </el-table-column>
-                        <el-table-column label="英雄定位"></el-table-column>
-                        <el-table-column label="英雄售价"></el-table-column>
-                        <el-table-column label="上架时间"></el-table-column>
-                        <el-table-column label="操作"></el-table-column>
+                        <el-table-column label="英雄定位" min-width="15%">
+                            <template slot-scope="scope">
+                                <span v-for="(item, index) in scope.row.classify" :key="index" style="padding: 0 4px;">{{item}}</span>
+                            </template>
+                        </el-table-column>
+                        <el-table-column label="英雄售价" min-width="28%">
+                            <template slot-scope="scope">
+                                <span v-if="scope.row.money">￥{{scope.row.money}}</span>
+                                <span v-if="scope.row.chip">、{{scope.row.chip}}碎片</span>
+                                <span v-if="scope.row.coupon">、{{scope.row.coupon}}点券</span>
+                                <span v-if="scope.row.way.includes('砖石抽奖')">仅可通过消费获得</span>
+                            </template>
+                        </el-table-column>
+                        <el-table-column label="上架时间" min-width="17%">
+                            <template slot-scope="scope">
+                                {{scope.row.date}}
+                            </template>
+                        </el-table-column>
+                        <el-table-column label="操作" min-width="25%">
+                            <el-button type="primary" size="small" style="margin-right: 18px">编辑</el-button>
+                            <span class="edit">详情</span>
+                            <span class="delete">删除</span>
+                        </el-table-column>
                     </el-table>
                 </div>
             </div>
@@ -56,13 +78,20 @@
         data(){
             return {
                 heroTypeList: [{name: "全部", id: 0}],
-                classifyList: [],
                 defaultProps: {children: 'child', label: 'name'},                        //树形选择器
                 popupShow: false,                                                        //分类弹窗是否显示
+                heroList: [],         //英雄列表
+                id: null,
+                params: {
+                    page_count: this.$store.state.per_num,   //每页数据条数
+                    page: 1,     //页码
+                    category_id: 0,
+                },
             }
         },
         created() {
             this.getClassifyList();
+            this.getHeroList();
         },
         methods: {
             //新增分类
@@ -71,14 +100,33 @@
             },
             //获取分类列表
             getClassifyList(){
-                this.$http.get('categories').then((res)=>{
-                    let classifyList = [];
+                this.$http.get('rest/heroCategories').then((res)=>{
+                    this.heroTypeList = [{name: "全部", id: 0}];
                     for(let i = 0 ; i < res.data.length; i++){
-                        classifyList.push({name: res.data[i].classify, id: i + 1});
+                        this.heroTypeList.push({name: res.data[i].classify, id: i + 1});
                     }
-                    this.classifyList = this.heroTypeList.concat(classifyList);
-                    window.console.log(this.classifyList);
+                    this.$nextTick(() => {
+                        this.$refs.elTree && this.$refs.elTree.setCurrentKey(this.params.category_id)
+                    })
                 })
+            },
+            //获取英雄列表
+            getHeroList(){
+                this.$http.get('rest/heroInfo').then((res)=>{
+                    this.heroList = res.data;
+                    window.console.log(this.heroList);
+                })
+            },
+            //点击树形控件
+            handleNodeClick(val) {
+                if(val.id === 0){
+                    //点击的是'全部'
+                    this.getHeroList();
+                }else {
+                    this.$http(`rest/heroInfo/${val.name}`).then((res)=>{
+                        this.heroList = res.data;
+                    })
+                }
             },
             //新建分类时点击保存
             success(){
@@ -160,5 +208,11 @@
 
     .hero-list >>> .el-tree-node__expand-icon {
         padding: 0 6px 0 3px;
+    }
+
+    .edit ,.delete{
+        color: #00C191;
+        margin-right: 18px;
+        cursor: pointer;
     }
 </style>

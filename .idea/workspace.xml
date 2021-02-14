@@ -2,33 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d55bdcc2-34d5-4ae5-aaef-cc2de416f6f2" name="默认更改列表" comment="">
-      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pc/src/components/AlarmText.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pc/src/components/SaveButton.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pc/src/components/Search.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pc/src/components/SubmitButton.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pc/src/components/dxsInput.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pc/src/hero/components/classifyNew.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pc/src/hero/heroClassify.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pc/src/http.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pc/src/utils.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/models/category.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/plugins/db.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/routes/admin/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pc/src/components/HeroPic.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pc/src/hero/components/getWayNew.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/models/HeroGetWay.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/models/HeroInfo.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pc/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/pc/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pc/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/pc/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pc/src/bread.js" beforeDir="false" afterPath="$PROJECT_DIR$/pc/src/bread.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pc/src/hero/components/classifyNew.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pc/src/hero/components/classifyNew.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pc/src/hero/heroClassify.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pc/src/hero/heroClassify.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pc/src/hero/heroList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pc/src/hero/heroList.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pc/src/hero/heroNew.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pc/src/hero/heroNew.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pc/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/pc/src/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pc/src/main.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pc/src/main.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pc/src/pc_public.css" beforeDir="false" afterPath="$PROJECT_DIR$/pc/src/pc_public.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pc/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pc/src/router/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pc/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pc/src/store/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/models/category.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/HeroCategory.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/routes/admin/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/admin/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,8 +25,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
-        <option value="JavaScript File" />
         <option value="Vue Single File Component" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -59,7 +45,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/pc/node_modules/lodash" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -73,11 +59,14 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Henry\node-vue\node-vue\pc\src" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Henry\node-vue\node-vue\pc\node_modules\lodash" />
       <recent name="C:\Users\Henry\node-vue\node-vue\pc\src\components" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Henry\node-vue\node-vue\server\models" />
+      <recent name="C:\Users\Henry\node-vue\node-vue\server\models\hero" />
+      <recent name="C:\Users\Henry\node-vue\node-vue\pc\src" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -94,7 +83,7 @@
       <workItem from="1613120694952" duration="13017000" />
       <workItem from="1613182854991" duration="14230000" />
       <workItem from="1613206674643" duration="9527000" />
-      <workItem from="1613268984077" duration="11671000" />
+      <workItem from="1613268984077" duration="31373000" />
     </task>
     <servers />
   </component>
@@ -121,10 +110,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1613121043617" />
-    <state x="692" y="252" width="535" height="536" key="find.popup" timestamp="1613129871718">
+    <state x="257" y="164" width="1283" height="747" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1613311878473">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="692" y="252" width="535" height="536" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1613129871718" />
+    <state x="257" y="164" width="1283" height="747" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1613311878473" />
+    <state x="692" y="252" width="535" height="536" key="find.popup" timestamp="1613310550099">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="692" y="252" width="535" height="536" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1613310550099" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1613278170753">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

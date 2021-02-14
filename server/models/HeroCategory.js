@@ -7,4 +7,4 @@ const schema = new mongoose.Schema({
     time: {type: String},
 })
 
-module.exports = mongoose.model('Category', schema)
+module.exports = mongoose.model('HeroCategories', schema)
