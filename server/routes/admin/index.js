@@ -29,6 +29,12 @@ module.exports = app => {
         res.send(list);
     })
 
+    //根据英雄id返回信息
+    router.get('/id/:id', async (req, res) =>{
+        const item = await req.Model.findById(req.params.id);
+        res.send(item);
+    })
+
 
     //编辑
     router.put('/:id', async (req, res) => {
@@ -51,4 +57,13 @@ module.exports = app => {
         req.Model = require(`../../models/${modelName}`)
         next()
     },router)
+
+    //图片上传
+    const multer = require('multer');
+    const upload = multer({dest: __dirname + '/../../uploads'})
+    app.post('/admin/api/upload', upload.single('file'), async (req, res) => {
+        let file = req.file;
+        file.url = `http://localhost:3000/uploads/${file.filename}`;
+        res.send(file);
+    })
 }

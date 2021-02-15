@@ -24,10 +24,13 @@
 
                 <!-- 右侧英雄列表 -->
                 <div class="list" style="width: calc(100% - 180px)">
-                    <el-table :data="heroList">
+                    <el-table :data="heroList.slice((page - 1) * page_count, page * page_count)">
                         <el-table-column label="英雄名称" min-width="15%">
                             <template slot-scope="scope">
-                                {{scope.row.name}}
+                                <div class="imgAndName">
+                                    <img :src="scope.row.pic[0]">
+                                    <span>{{scope.row.name}}</span>
+                                </div>
                             </template>
                         </el-table-column>
                         <el-table-column label="英雄定位" min-width="15%">
@@ -49,11 +52,14 @@
                             </template>
                         </el-table-column>
                         <el-table-column label="操作" min-width="25%">
-                            <el-button type="primary" size="small" style="margin-right: 18px">编辑</el-button>
-                            <span class="edit">详情</span>
-                            <span class="delete">删除</span>
+                            <template slot-scope="scope">
+                                <el-button type="primary" size="small" style="margin-right: 18px" @click="toEdit(scope.row)">编辑</el-button>
+                                <span class="edit">详情</span>
+                                <span class="delete" @click="deleteHero(scope.row)">删除</span>
+                            </template>
                         </el-table-column>
                     </el-table>
+                    <pagination :total="heroList.length" :page_count.sync="page_count" :page.sync="page"></pagination>
                 </div>
             </div>
 
@@ -61,6 +67,7 @@
 
         <!-- 新增分类弹窗 -->
         <classify-new v-if="popupShow" v-model="popupShow" @success="success"></classify-new>
+
     </div>
 </template>
 
@@ -68,12 +75,14 @@
     import AddButton from "../components/AddButton";
     import Search from "../components/Search";
     import classifyNew from "./components/classifyNew";
+    import Pagination from "../components/Pagination";
     export default {
         name: "heroList",
         components: {
             AddButton,
             Search,
             classifyNew,
+            Pagination
         },
         data(){
             return {
@@ -83,10 +92,10 @@
                 heroList: [],         //英雄列表
                 id: null,
                 params: {
-                    page_count: this.$store.state.per_num,   //每页数据条数
-                    page: 1,     //页码
                     category_id: 0,
                 },
+                page_count: this.$store.state.per_num,   //每页数据条数
+                page: 1,     //页码
                 searchText: '',      //搜索框内容
             }
         },
@@ -145,6 +154,28 @@
                     }
                 })
             },
+
+            //编辑英雄
+            toEdit(row){
+                this.$router.push({name: 'heroEdit', params: {id: row._id}});
+            },
+
+            //删除英雄
+            deleteHero(row){
+                this.$confirm(`是否删除英雄--${row.name}?`, '提示', {
+                    confirmButtonText: '确定',
+                    cancelButtonText: '取消',
+                    type: 'warning'
+                }).then(async () => {
+                    await this.$http.delete(`rest/heroInfo/${row._id}`)
+                    this.$message({
+                        type: 'success',
+                        message: '删除成功!'
+                    });
+                    this.getHeroList();
+                })
+            },
+
             //新建分类时点击保存
             success(){
                 this.getClassifyList();
@@ -231,5 +262,17 @@
         color: #00C191;
         margin-right: 18px;
         cursor: pointer;
+    }
+
+    .imgAndName{
+        display: flex;
+        align-items: center;
+    }
+
+    .imgAndName img{
+        width: 38px;
+        height: 38px;
+        margin-right: 8px;
+        border-radius: 4px;
     }
 </style>

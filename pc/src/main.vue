@@ -6,7 +6,7 @@
 
             <!--  选项 -->
             <div class="side-menu">
-                <el-menu style="width: 230px;" background-color="#1E2025" text-color="#fff" default-active="1"
+                <el-menu style="width: 230px;" background-color="#1E2025" text-color="#fff" :default-active="activeRouter"
                          active-text-color="#fff">
                     <!-- 英雄管理 -->
                     <el-submenu v-for="(item,index) in all_menu_list" :key="index" :index="item.id + ''">
@@ -126,20 +126,34 @@
                 ],
                 explain_title: '',
                 explain_word: '',
+                activeRouter: '',
             }
         },
         watch: {
             "$route.name"(newValue){
-
+                this.pageChange();
             }
         },
         created() {
             // window.console.log('route', this.$route.name);
+            this.pageChange();
         },
         methods: {
             getExplain(){
 
-            }
+            },
+            pageChange() {
+                //设置element-ui中的导航菜单栏选中状态
+                this.activeRouter = this.$route.name;
+            },
+            //解决新增单据页面用户取消跳转时导航栏激活状态没有回退的bug
+            //如果用pageChange，激活状态不会回退，因为activeRouter没有改变
+            pageChangeR() {
+                this.activeRouter = '';
+                setTimeout(() => {
+                    this.activeRouter = this.$route.name;
+                }, 0);
+            },
         }
     }
 </script>

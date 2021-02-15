@@ -3,68 +3,87 @@
         <div class="">
             <div class="title">英雄信息</div>
             <div class="content">
-                <el-form label-width="100px">
-                    <!-- 英雄图片 -->
-                    <el-form-item label="英雄图片：" class="required">
-                        <hero-pic v-model="pic"></hero-pic>
-                        <alarm-text text="请选择英雄图片" :empty="picError"></alarm-text>
-                    </el-form-item>
+                <div class="content-left">
+                    <el-form label-width="100px">
+                        <!-- 英雄图片 -->
+                        <el-form-item label="英雄图片：" class="required">
+                            <el-upload
+                                class="avatar-uploader"
+                                :action="$http.defaults.baseURL + '/upload'"
+                                :show-file-list="false"
+                                :on-success="afterUpload">
+                                <img v-if="pic" :src="pic" class="avatar">
+                                <i v-else class="el-icon-plus avatar-uploader-icon"></i>
+                            </el-upload>
+                            <alarm-text text="请选择英雄图片" :empty="picError"></alarm-text>
+                        </el-form-item>
 
-                    <!-- 英雄名称 -->
-                    <el-form-item label="英雄名称：" class="required">
-                        <el-input placeholder="请输入英雄名称" v-model="name"></el-input>
-                        <alarm-text text="请输入英雄名称" :empty="nameError"></alarm-text>
-                    </el-form-item>
+                        <!-- 英雄名称 -->
+                        <el-form-item label="英雄名称：" class="required">
+                            <el-input placeholder="请输入英雄名称" v-model="name"></el-input>
+                            <alarm-text text="请输入英雄名称" :empty="nameError"></alarm-text>
+                        </el-form-item>
 
-                    <!-- 英雄获取方式 -->
-                    <el-form-item label="获取方式：" class="required">
-                        <el-select placeholder="请选择获取方式" v-model="way" multiple @change="wayChoose" @remove-tag="remove">
-                            <el-option  v-for="item in wayList" :key="item.id" :value="item.name" :label="item.name"></el-option>
-                        </el-select>
-                        <alarm-text text="请选择获取方式" :empty="wayError"></alarm-text>
-                        <span class="add" @click="getWayNew">+新增获取方式</span>
-                    </el-form-item>
+                        <!-- 英雄获取方式 -->
+                        <el-form-item label="获取方式：" class="required">
+                            <el-select placeholder="请选择获取方式" v-model="way" multiple @change="wayChoose" @remove-tag="remove">
+                                <el-option  v-for="item in wayList" :key="item.id" :value="item.name" :label="item.name"></el-option>
+                            </el-select>
+                            <alarm-text text="请选择获取方式" :empty="wayError"></alarm-text>
+                            <span class="add" @click="getWayNew">+新增获取方式</span>
+                        </el-form-item>
 
-                    <!-- 金币售价 -->
-                    <el-form-item label="金币售价：" v-show="moneyWayShow" class="required">
-                        <el-input placeholder="请输入金币价格" v-model="money"></el-input>
-                        <alarm-text text="请输入金币价格" :empty="moneyError"></alarm-text>
-                    </el-form-item>
+                        <!-- 金币售价 -->
+                        <el-form-item label="金币售价：" v-show="moneyWayShow" class="required">
+                            <el-input placeholder="请输入金币价格" v-model="money"></el-input>
+                            <alarm-text text="请输入金币价格" :empty="moneyError"></alarm-text>
+                        </el-form-item>
 
-                    <!-- 皮肤碎片 -->
-                    <el-form-item label="碎片数量：" v-show="chipWayShow" class="required">
-                        <el-input placeholder="请输入碎片数量" v-model="chip"></el-input>
-                        <alarm-text text="请输入碎片数量" :empty="chipError"></alarm-text>
-                    </el-form-item>
+                        <!-- 皮肤碎片 -->
+                        <el-form-item label="碎片数量：" v-show="chipWayShow" class="required">
+                            <el-input placeholder="请输入碎片数量" v-model="chip"></el-input>
+                            <alarm-text text="请输入碎片数量" :empty="chipError"></alarm-text>
+                        </el-form-item>
 
-                    <!-- 点券售价 -->
-                    <el-form-item label="点券售价：" v-show="couponWayShow" class="required">
-                        <el-input placeholder="请输入点券数量" v-model="coupon"></el-input>
-                        <alarm-text text="请输入点券数量" :empty="couponError"></alarm-text>
-                    </el-form-item>
+                        <!-- 点券售价 -->
+                        <el-form-item label="点券售价：" v-show="couponWayShow" class="required">
+                            <el-input placeholder="请输入点券数量" v-model="coupon"></el-input>
+                            <alarm-text text="请输入点券数量" :empty="couponError"></alarm-text>
+                        </el-form-item>
 
-                    <!-- 上架时间 -->
-                    <el-form-item label="上架时间：" class="required">
-                        <el-date-picker v-model="date" type="date" placeholder="请选择上架时间" :clearable="false" format="yyyy 年 MM 月 dd 日"
-                                        value-format="yyyy-MM-dd"></el-date-picker>
-                        <alarm-text text="请选择上架时间" :empty="dateError"></alarm-text>
-                    </el-form-item>
+                        <!-- 上架时间 -->
+                        <el-form-item label="上架时间：" class="required">
+                            <el-date-picker v-model="date" type="date" placeholder="请选择上架时间" :clearable="false" format="yyyy 年 MM 月 dd 日"
+                                            value-format="yyyy-MM-dd"></el-date-picker>
+                            <alarm-text text="请选择上架时间" :empty="dateError"></alarm-text>
+                        </el-form-item>
 
-                    <!-- 英雄定位 -->
-                    <el-form-item label="英雄分类：" class="required">
-                        <el-select placeholder="请选择英雄分类" v-model="classify" multiple>
-                            <el-option v-for="item in classifyList" :key="item.id" :value="item.name" :label="item.name"></el-option>
-                        </el-select>
-                        <alarm-text text="请选择英雄分类" :empty="classifyError"></alarm-text>
-                        <span class="add" @click="classifyNew">+新增英雄分类</span>
-                    </el-form-item>
-                </el-form>
+                        <!-- 英雄定位 -->
+                        <el-form-item label="英雄分类：" class="required">
+                            <el-select placeholder="请选择英雄分类" v-model="classify" multiple>
+                                <el-option v-for="item in classifyList" :key="item.id" :value="item.name" :label="item.name"></el-option>
+                            </el-select>
+                            <alarm-text text="请选择英雄分类" :empty="classifyError"></alarm-text>
+                            <span class="add" @click="classifyNew">+新增英雄分类</span>
+                        </el-form-item>
+                    </el-form>
+                </div>
+                <div class="content-right">
+                    <el-form label-width="100px">
+                        <el-form-item label="英雄描述：" class="required">
+                            <el-input type="textarea" v-model="describe"></el-input>
+                            <alarm-text text="请输入英雄描述" :empty="describeError"></alarm-text>
+                        </el-form-item>
+                    </el-form>
+                </div>
             </div>
+
         </div>
 
         <!--底部按钮-->
         <div class="button-bg">
             <div class="button-control">
+                <el-button style="color: #666;" v-if="$route.name === 'heroEdit' " @click="deleteHero">删除</el-button>
                 <el-button style="color: #666;">取 消</el-button>
                 <el-button type="primary" @click="submit()">保 存</el-button>
             </div>
@@ -79,25 +98,23 @@
 </template>
 
 <script>
-    import HeroPic from "../components/HeroPic";
     import getWayNew from "./components/getWayNew";
     import classifyNew from "./components/classifyNew";
     import AlarmText from "../components/AlarmText";
     export default {
         name: "heroNew",
         components: {
-            HeroPic,
             getWayNew,
             classifyNew,
             AlarmText
         },
         data(){
             return {
-                pic: [],
+                pic: '',
                 picError: false,
                 date: '',           //上架时间
                 dateError: false,
-                way: '',                //获取方式
+                way: [],                //获取方式
                 wayError: false,
                 wayList: [],               //获取方式列表
                 classifyList: [],          //英雄定位列表
@@ -116,11 +133,27 @@
                 chipError: false,
                 coupon: null,              //点券数量
                 couponError: false,
+                describe: '',              //英雄描述
+                describeError: false,
             }
         },
-        created() {
+        async created() {
             this.getWayList();
             this.getClassify();
+            if(this.$route.params.id){
+                let res = await this.$http.get(`rest/heroInfo/id/${this.$route.params.id}`)
+                let item = res.data;
+                this.pic = item.pic;
+                this.name = item.name;
+                this.way = item.way;
+                this.chip = item.chip;
+                this.classify = item.classify;
+                this.coupon = item.coupon;
+                this.date = item.date;
+                this.money = item.money;
+                this.describe = item.describe;
+                this.wayChoose(this.way);
+            }
         },
         methods: {
             //获取英雄定位列表
@@ -152,6 +185,12 @@
                         this.wayList.push({name: res.data[i].name, id: i})
                     }
                 })
+            },
+
+            //上传照片
+            afterUpload(res){
+                window.console.log(res);
+                this.pic = res.url;
             },
 
             //新增获取方式点击保存
@@ -190,6 +229,21 @@
                 }
             },
 
+            //删除英雄
+            deleteHero(){
+                this.$confirm(`是否删除英雄--${this.name}?`, '提示', {
+                    confirmButtonText: '确定',
+                    cancelButtonText: '取消',
+                    type: 'warning'
+                }).then( () => {
+                    this.$http.delete(`rest/heroInfo/${this.$route.params.id}`)
+                    this.$message({
+                        type: 'success',
+                        message: '删除成功!'
+                    });
+                    this.$router.push({name: 'heroList'});
+                })
+            },
 
             //保存该新英雄时
             submit(){
@@ -249,6 +303,13 @@
                     this.classifyError = false
                 }
 
+                if(this.describe === ''){
+                    this.describeError = true;
+                    return false;
+                }else{
+                    this.describeError = false;
+                }
+
                 let params = {
                     pic: this.pic,
                     name: this.name,
@@ -258,11 +319,21 @@
                     coupon: this.coupon,
                     date: this.date,
                     classify: this.classify,
+                    describe: this.describe,
                 }
 
-                let res = this.$http.post('rest/heroInfo', params);
+                let res = null;
+
+                if(this.$route.params.id){
+                    //编辑英雄
+                    res = this.$http.put(`rest/heroInfo/${this.$route.params.id}`, params)
+                }else{
+                    //新增
+                    res = this.$http.post('rest/heroInfo', params);
+                }
                 this.$message({message: '保存成功', type: "success"});
                 this.$router.push({name: 'heroList'});
+
             }
         }
     }
@@ -278,12 +349,22 @@
     }
 
     .content{
-        margin-left: 78px;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .content-left{
+        width: 50%;
     }
 
     /*统一输入框的长度*/
     .hero-new >>> .el-input__inner{
         width: 374px;
+    }
+
+    .hero-new >>> .el-textarea__inner{
+        width: 424px;
+        min-height: 204px!important;
     }
 
     .add{
@@ -301,5 +382,30 @@
 
     .button-bg >>> .el-button--default:hover {
         background: #F6F6F6 !important;
+    }
+
+
+    .avatar-uploader >>>  .el-upload {
+        border: 1px dashed #d9d9d9;
+        border-radius: 6px;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+    }
+    .avatar-uploader  >>> .el-upload:hover {
+        border-color: #409EFF;
+    }
+    .avatar-uploader-icon {
+        font-size: 28px;
+        color: #8c939d;
+        width: 98px;
+        height: 98px;
+        line-height: 98px;
+        text-align: center;
+    }
+    .avatar {
+        width: 98px;
+        height: 98px;
+        display: block;
     }
 </style>
