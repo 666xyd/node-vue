@@ -32,8 +32,9 @@ const routes = [
             {path: 'hero/new', name: 'heroNew', component: heroNew},           //新增英雄
             {path: 'hero/edit/:id', name: 'heroEdit', component: heroNew},                  //编辑英雄
             {path: 'hero/classify', name: 'heroClassify', component: heroClassify},                     //分类列表
-            {path: 'skin/List', name: 'skinList', component: skinList},        //皮肤列表
+            {path: 'skin/list', name: 'skinList', component: skinList},        //皮肤列表
             {path: 'skin/new', name: 'skinNew', component: skinNew},           //新增皮肤
+            {path: 'skin/edit/:id', name: 'skinEdit', component: skinNew},         //编辑皮肤
 
             //装备管理
             {path: 'equipment/list', name: 'equipmentList', component: equipmentList},             //装备列表

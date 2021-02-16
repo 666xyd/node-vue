@@ -24,7 +24,7 @@
 
                 <!-- 右侧英雄列表 -->
                 <div class="list" style="width: calc(100% - 180px)">
-                    <el-table :data="heroList.slice((page - 1) * page_count, page * page_count)">
+                    <el-table :data="heroList.slice((page - 1) * page_count, page * page_count)"  :default-sort = "{prop: 'date', order: 'descending'}">
                         <el-table-column label="英雄名称" min-width="15%">
                             <template slot-scope="scope">
                                 <div class="imgAndName">
@@ -46,11 +46,7 @@
                                 <span v-if="scope.row.way.includes('砖石抽奖')">仅可通过消费获得</span>
                             </template>
                         </el-table-column>
-                        <el-table-column label="上架时间" min-width="17%">
-                            <template slot-scope="scope">
-                                {{scope.row.date}}
-                            </template>
-                        </el-table-column>
+                        <el-table-column label="上架时间" min-width="17%" sortable prop="date"></el-table-column>
                         <el-table-column label="操作" min-width="25%">
                             <template slot-scope="scope">
                                 <el-button type="primary" size="small" style="margin-right: 18px" @click="toEdit(scope.row)">编辑</el-button>

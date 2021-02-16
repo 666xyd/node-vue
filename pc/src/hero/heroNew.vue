@@ -89,7 +89,7 @@
             </div>
         </div>
         <!-- 新增获取方式弹窗 -->
-        <get-way-new v-model="popupShow" v-if="popupShow" @success="newWaySuccess"></get-way-new>
+        <get-way-new v-model="popupShow" v-if="popupShow" @success="newWaySuccess" type="heroGetWay"></get-way-new>
 
         <!-- 新增分类弹窗 -->
         <classify-new v-model="classifyNewShow" v-if="classifyNewShow" @success="newClassifySuccess"></classify-new>
@@ -141,7 +141,7 @@
             this.getWayList();
             this.getClassify();
             if(this.$route.params.id){
-                let res = await this.$http.get(`rest/heroInfo/id/${this.$route.params.id}`)
+                let res = await this.$http.get(`rest/heroInfo/heroId/${this.$route.params.id}`)
                 let item = res.data;
                 this.pic = item.pic;
                 this.name = item.name;
@@ -247,12 +247,12 @@
 
             //保存该新英雄时
             submit(){
-                // if(this.pic.length === 0){
-                //     this.picError = true;
-                //     return false
-                // }else{
-                //     this.picError = false;
-                // }
+                if(this.pic.length === 0){
+                    this.picError = true;
+                    return false
+                }else{
+                    this.picError = false;
+                }
 
                 if(this.name === ''){
                     this.nameError = true;

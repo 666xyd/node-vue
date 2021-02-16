@@ -2,23 +2,37 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d55bdcc2-34d5-4ae5-aaef-cc2de416f6f2" name="默认更改列表" comment="">
-      <change afterPath="$PROJECT_DIR$/server/uploads/120eb5a1f955f2c65ef9373bb831d53c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/uploads/2e75d1514f84274f37243b5f55a4b247" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/uploads/3265aafd7406ab6a66ef7106479d9460" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/uploads/553824ad426277e3ab4914c0a689589b" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/uploads/712c36ec5ed2803756269a911c929b77" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/uploads/bb1aabf4bccd95a13e8dbe0cbb65504c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/uploads/d42e5aa414a5f6c6f326455e425d8366" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/uploads/e31f578f410c10a816914670c15d6d6b" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/models/SkinGetWay.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/models/SkinInfo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/00293a5b926a18202c431e43c2cec852" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/080c47bbc377dc3b84a7412b08c9dad2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/0ff302167b56f2b3e0a12a81a8614a81" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/186f4d2517e698db3ee23de5bdbbd612" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/1b6fbe8b710b379be25573ff47bf4f9a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/27fc3683cef1ebf62e2e147ffe3b5086" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/4cdcc7ac970af130631a533826761324" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/53e867d010e52414ab0355a6a41731c4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/558ad73b39ae66d5924861895d751a74" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/56462965e950dac346f003b67e30a90e" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/5abfcaa4afbe53c91d00c83b208fb90d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/5f4825605572d1b4a21a3c9c7542a143" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/9ed90ab14057a7ef8b1ca811724a3bec" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/add52a311c7827a69b7000a22615ade9" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/b3a4c6c8b9d429781427ca41a260768c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/c32165e7d81a3156f6606408002b4554" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/c4473d32d5974babed3b7dbf1d55c49a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/c8298074ce6893a3616070793432bf60" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/c963b825e1db5861f63f0de8b44ed039" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/ef45cfa78d0ef51eff605e25c01edbcf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/f476f627d84c90d7d2513e6d8f1c9f91" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pc/src/hero/components/getWayNew.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pc/src/hero/components/getWayNew.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pc/src/hero/heroList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pc/src/hero/heroList.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pc/src/hero/heroNew.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pc/src/hero/heroNew.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pc/src/main.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pc/src/main.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pc/src/hero/skinList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pc/src/hero/skinList.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pc/src/hero/skinNew.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pc/src/hero/skinNew.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pc/src/pc_public.css" beforeDir="false" afterPath="$PROJECT_DIR$/pc/src/pc_public.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pc/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pc/src/router/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/models/HeroInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/HeroInfo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/routes/admin/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/admin/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -89,7 +103,8 @@
       <workItem from="1613182854991" duration="14230000" />
       <workItem from="1613206674643" duration="9527000" />
       <workItem from="1613268984077" duration="35579000" />
-      <workItem from="1613357099551" duration="9834000" />
+      <workItem from="1613357099551" duration="9876000" />
+      <workItem from="1613452099312" duration="25118000" />
     </task>
     <servers />
   </component>
@@ -132,9 +147,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="603" y="242" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1613360201723" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1613316259159">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1613477827363">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1613316259159" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1613477827363" />
   </component>
 </project>

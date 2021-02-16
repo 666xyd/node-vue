@@ -30,9 +30,23 @@ module.exports = app => {
     })
 
     //根据英雄id返回信息
-    router.get('/id/:id', async (req, res) =>{
+    router.get('/heroId/:id', async (req, res) =>{
         const item = await req.Model.findById(req.params.id);
         res.send(item);
+    })
+
+    //根据皮肤id返回信息
+    router.get('/skinId/:id', async (req, res) =>{
+        const item = await req.Model.findById(req.params.id);
+        res.send(item);
+    })
+
+    //在皮肤列表根据英雄姓名或皮肤姓名返回信息
+    router.get('/skinName/:name', async (req, res) => {
+        const nameList = await req.Model.find({"name": {$regex: req.params.name}});
+        const skinList = await req.Model.find({"skin": {$regex: req.params.name}});
+        const list = nameList.concat(skinList);
+        res.send(list);
     })
 
 

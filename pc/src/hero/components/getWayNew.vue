@@ -48,6 +48,9 @@
                 type: Boolean,
                 default: false,
             },
+            type: {
+                type: String,
+            }
         },
         watch: {
             value(newValue){
@@ -86,7 +89,7 @@
                     comment: this.comment,
                 }
 
-                let res = await this.$http.post('rest/heroGetWay', params);
+                let res = await this.$http.post(`rest/${this.type}`, params);
 
                 this.popupShow = false;
                 this.$message({message: '保存成功', type: "success"});

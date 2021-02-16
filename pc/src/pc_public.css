@@ -616,3 +616,16 @@ a{
     margin: 20px;
     padding: 24px;
 }
+
+.el-radio.is-bordered.is-checked {
+    border-color: #00C191!important;
+}
+
+.el-radio__input.is-checked .el-radio__inner {
+    border-color: #00C191!important;
+    background: #00C191!important;
+}
+
+.el-radio__input.is-checked+.el-radio__label {
+    color: #00C191!important;
+}
