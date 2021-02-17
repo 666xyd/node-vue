@@ -50,7 +50,7 @@
                         <el-table-column label="操作" min-width="25%">
                             <template slot-scope="scope">
                                 <el-button type="primary" size="small" style="margin-right: 18px" @click="toEdit(scope.row)">编辑</el-button>
-                                <span class="edit">详情</span>
+                                <span class="edit" @click="toDetail(scope.row)">详情</span>
                                 <span class="delete" @click="deleteHero(scope.row)">删除</span>
                             </template>
                         </el-table-column>
@@ -175,6 +175,11 @@
             //新建分类时点击保存
             success(){
                 this.getClassifyList();
+            },
+
+            //英雄详情
+            toDetail(row){
+                this.$router.push({name: 'heroDetail', params: {id: row._id, name: row.name}});
             }
         },
     }

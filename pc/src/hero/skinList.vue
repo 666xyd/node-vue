@@ -39,13 +39,15 @@
                             </div>
                             <div class="operation">
                                 <el-button icon="el-icon-edit-outline" size="small" round type="success" plain @click="toEdit(item)">编辑</el-button>
-                                <el-button icon="el-icon-paperclip" size="small" round type="success" plain>详情</el-button>
+                                <el-button icon="el-icon-paperclip" size="small" round type="success" plain @click="toDetail(item)">详情</el-button>
                                 <el-button icon="el-icon-delete" size="small" round type="success" plain @click="deleteSkin(item)">删除</el-button>
                             </div>
                         </div>
                     </template>
                 </div>
             </div>
+
+            <div v-if="skinList.length === 0" class="empty">暂无该分类的皮肤</div>
         </div>
     </div>
 </template>
@@ -91,7 +93,7 @@
                 this.$router.push({name: 'skinNew'});
             },
 
-           search(){
+            search(){
                //这里需要nexttick，不用的话点清空搜索内容时，仍然停留在搜索内容的结果
                this.$nextTick(()=>{
                    if(this.searchText){
@@ -178,6 +180,11 @@
                     });
                     this.getSkinList();
                 })
+            },
+
+            //皮肤详情
+            toDetail(item){
+                this.$router.push({name: 'skinDetail', params: {id: item._id}});
             },
         }
     }
@@ -340,5 +347,15 @@
 
     .toTop:hover{
         background-color: rgba(192, 192, 192, 0.1);
+    }
+
+    .empty{
+        width: 100%;
+        background-color: #F5F7FA;
+        height: 60px;
+        line-height: 60px;
+        text-align: center;
+        font-size: 14px;
+        font-weight: bold;
     }
 </style>

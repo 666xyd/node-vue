@@ -59,6 +59,16 @@
                             <alarm-text text="请输入点券数量" :empty="couponError"></alarm-text>
                         </el-form-item>
 
+                        <!-- 皮肤性质 -->
+                        <el-form-item label="皮肤性质：" class="required">
+                            <el-select placeholder="请选择皮肤性质" v-model="character">
+                                <el-option  v-for="item in characterList" :key="item.id" :value="item.name" :label="item.name"></el-option>
+                            </el-select>
+                            <alarm-text text="请选择皮肤性质" :empty="characterError"></alarm-text>
+                            <span class="add" @click="getCharacterNew">+新增皮肤性质</span>
+                        </el-form-item>
+
+
                         <!-- 上架时间 -->
                         <el-form-item label="上架时间：" class="required">
                             <el-date-picker v-model="date" type="date" placeholder="请选择上架时间" :clearable="false" format="yyyy 年 MM 月 dd 日"
@@ -87,17 +97,22 @@
 
         <!-- 新增获取方式弹窗 -->
         <get-way-new v-model="popupShow" v-if="popupShow" @success="newWaySuccess" type="skinGetWay"></get-way-new>
+
+        <!-- 新增皮肤性质弹窗 -->
+        <character-new v-model="characterShow" v-if="characterShow" @success="newCharacterSuccess"></character-new>
     </div>
 </template>
 
 <script>
     import AlarmText from "../components/AlarmText";
     import getWayNew from "./components/getWayNew";
+    import characterNew from "./components/characterNew";
     export default {
         name: "skinNew",
         components: {
             AlarmText,
-            getWayNew
+            getWayNew,
+            characterNew
         },
         data(){
             return {
@@ -110,8 +125,12 @@
                 skinError: false,
                 way: [],          //选中的获取方式列表
                 wayList: [],      //
+                character: '',
+                characterList: [],
                 wayError: false,
-                popupShow: false,
+                characterError: false,
+                popupShow: false,  //新增获取方式弹窗是否显示
+                characterShow: false,     //新增皮肤性质弹窗是否显示
                 chip: '',
                 chipWayShow: false,
                 chipError: false,
@@ -126,6 +145,7 @@
         async created(){
             this.getHeroList();
             this.getWayList();
+            this.getCharacterList();
             if(this.$route.params.id){
                 //編輯皮肤頁面
                 let res = await this.$http.get(`rest/skinInfo/skinId/${this.$route.params.id}`);
@@ -137,6 +157,7 @@
                 this.name = skinInfo.name;
                 this.pic = skinInfo.pic;
                 this.skin = skinInfo.skin;
+                this.character = skinInfo.character;
                 this.way = skinInfo.way;
                 this.wayChoose(this.way);
             }
@@ -166,14 +187,36 @@
                 })
             },
 
+            //获取皮肤性质列表
+            getCharacterList(){
+                this.$http.get('rest/skinCharacter').then((res) => {
+                    //每一次进来都要清空，不然在当前页面新增获取方式会有错误
+                    this.characterList = [];
+                    for(let i = 0; i < res.data.length; i++){
+                        this.characterList.push({name: res.data[i].name, id: i})
+                    }
+                    window.console.log(this.characterList);
+                })
+            },
+
             //点击新增获取方式
             getWayNew(){
                 this.popupShow = true;
             },
 
+            //点击新增皮肤性质
+            getCharacterNew(){
+               this.characterShow = true;
+            },
+
             //新增获取方式成功
             newWaySuccess(){
                 this.getWayList();
+            },
+
+            //新增皮肤性质成功
+            newCharacterSuccess(){
+                this.getCharacterList();
             },
 
             //获取方式的下拉框变化时
@@ -256,6 +299,13 @@
                     this.couponError = false;
                 }
 
+                if(this.character === ''){
+                    this.characterError = true;
+                    return false;
+                }else{
+                    this.characterError = false;
+                }
+
                 if(this.date === ''){
                     this.dateError = true;
                     return false;
@@ -278,6 +328,7 @@
                     date: this.date,
                     limit: this.limit,
                     classify: classify,
+                    character: this.character,
                 }
                 let res = null;
 

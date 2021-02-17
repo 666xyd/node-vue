@@ -49,6 +49,12 @@ module.exports = app => {
         res.send(list);
     })
 
+    //皮肤列表  根据英雄姓名返回该英雄所有的皮肤
+    router.get('/findByHeroName/:name', async  (req, res) =>{
+        const list = await req.Model.find({"name": req.params.name});
+        res.send(list);
+    })
+
 
     //编辑
     router.put('/:id', async (req, res) => {

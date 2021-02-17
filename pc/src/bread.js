@@ -3,10 +3,12 @@ export default {
     heroList: {title: '英雄列表', text: '记录所有英雄的信息，可对英雄进行增删查改等操作'},
     heroNew: {title: '新增英雄', text: '记录新英雄的分类、操作难度、定位等信息'},
     heroClassify: {title: '分类列表', text: '记录所有英雄的分类，可对英雄分类进行增删查改等操作'},
+    heroDetail: {title: '英雄详情', text: '记录该英雄的详细信息，包括出装推荐、铭文推荐、皮肤等信息'},
     heroEdit: {title: '编辑英雄', text: '修改英雄的信息'},
     skinList: {title: '皮肤列表', text: ''},
     skinNew: {title: '新增皮肤', text: ''},
     skinEdit: {title: '编辑皮肤', text: ''},
+    skinDetail: {title: '皮肤详情', text: '记录该皮肤详细信息，包括售价、性质等信息'},
 
     //装备管理
     equipmentList: {title: '装备列表', text: ''},

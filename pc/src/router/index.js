@@ -5,9 +5,11 @@ import Pc from '../main.vue';
 //英雄管理
 import heroList from '../hero/heroList';                  //英雄列表
 import heroNew from '../hero/heroNew';                    //新增英雄
+import heroDetail from "../hero/heroDetail";              //英雄详情
 import heroClassify from "../hero/heroClassify";          //分类列表
 import skinList from '../hero/skinList';                  //皮肤列表
 import skinNew from "../hero/skinNew";                    //新增皮肤
+import skinDetail from "../hero/skinDetail";              //皮肤详情
 
 //装备管理
 import equipmentList from "../equipment/equipmentList";            //装备列表
@@ -31,10 +33,13 @@ const routes = [
             {path: 'hero/list', name: 'heroList', component: heroList,},       //英雄列表
             {path: 'hero/new', name: 'heroNew', component: heroNew},           //新增英雄
             {path: 'hero/edit/:id', name: 'heroEdit', component: heroNew},                  //编辑英雄
+            {path: 'hero/detail/:name/:id', name: 'heroDetail', component: heroDetail},           //英雄详情
             {path: 'hero/classify', name: 'heroClassify', component: heroClassify},                     //分类列表
             {path: 'skin/list', name: 'skinList', component: skinList},        //皮肤列表
             {path: 'skin/new', name: 'skinNew', component: skinNew},           //新增皮肤
             {path: 'skin/edit/:id', name: 'skinEdit', component: skinNew},         //编辑皮肤
+            {path: 'skin/detail/:id', name: 'skinDetail', component: skinDetail},  //皮肤详情
+
 
             //装备管理
             {path: 'equipment/list', name: 'equipmentList', component: equipmentList},             //装备列表

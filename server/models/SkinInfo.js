@@ -7,6 +7,7 @@ const schema = new mongoose.Schema({
     way: {type: Array},
     chip: {type: Number},
     coupon: {type: Number},
+    character: {type: String},
     date: {type: String},
     limit: {type: String,},
     classify: {type: Array},
