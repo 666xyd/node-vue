@@ -44,6 +44,7 @@ const routes = [
             //装备管理
             {path: 'equipment/list', name: 'equipmentList', component: equipmentList},             //装备列表
             {path: 'equipment/new', name: 'equipmentNew', component: equipmentNew},                //新增装备
+            {path: 'equipment/edit/:id', name: 'equipmentEdit', component: equipmentNew},              //编辑装备
 
             //攻略管理
             {path: 'strategy/list', name: 'strategyList', component: strategyList},                //攻略列表

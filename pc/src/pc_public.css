@@ -629,3 +629,14 @@ a{
 .el-radio__input.is-checked+.el-radio__label {
     color: #00C191!important;
 }
+
+.el-popover{
+    background-color: rgba(0, 0, 0, .8) !important;
+    border: 1px solid #409eff!important;
+    padding: 20px 32px 32px 32px!important;
+}
+
+.popper__arrow{
+    display: none!important;
+
+}

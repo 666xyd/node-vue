@@ -1,15 +1,15 @@
 <template>
     <div class="dialog">
-        <el-dialog title="新增皮肤性质" :modal-append-to-body="true" :visible.sync="popupShow">
+        <el-dialog title="新增装备分类" :modal-append-to-body="true" :visible.sync="popupShow">
             <el-form label-width="140px">
-                <el-form-item label="皮肤性质：" class="required">
-                    <el-input placeholder="请输入皮肤性质" v-model="name" style="width: 348px;"></el-input>
-                    <alarm-text text="皮肤性质不可以为空" :empty="nameError"></alarm-text>
+                <el-form-item label="装备分类：" class="required">
+                    <el-input placeholder="请输入装备分类" v-model="name" style="width: 348px;"></el-input>
+                    <alarm-text text="装备分类不可以为空" :empty="nameError"></alarm-text>
                 </el-form-item>
 
                 <el-form-item label="描述：" class="required">
                     <el-input placeholder="请输入描述" v-model="describe" style="width: 348px"></el-input>
-                    <alarm-text text="皮肤性质描述不可以为空" :empty="describeError"></alarm-text>
+                    <alarm-text text="装备分类描述不可以为空" :empty="describeError"></alarm-text>
                 </el-form-item>
 
                 <el-form-item label="备注：">
@@ -27,19 +27,19 @@
 import AlarmText from "../../components/AlarmText";
 import SaveButton from "../../components/SaveButton";
 export default {
-    name: "characterNew",
+    name: "equipmentClassify",
     components: {
         AlarmText,
         SaveButton,
     },
     data(){
         return {
-            popupShow: this.value,          //新增皮肤性质弹窗是否显示
+            popupShow: this.value,          //新增装备分类弹窗是否显示
 
-            name: '',                   //获取皮肤性质
-            describe: '',                   //皮肤性质
+            name: '',                   //获取装备分类
+            describe: '',                   //装备分类
             comment: '',                    //备注内容
-            nameError: false,           //皮肤性质输入格式错误
+            nameError: false,           //装备分类输入格式错误
             describeError: false,           //描述没有填入时的提示
         }
     },
@@ -64,7 +64,7 @@ export default {
         },
         //保存按钮
         async submit(){
-            //提交前判断皮肤性质是否填写
+            //提交前判断装备分类是否填写
             if(this.name === ''){
                 this.nameError = true;
                 return false;
@@ -86,7 +86,7 @@ export default {
                 comment: this.comment,
             }
 
-            let res = await this.$http.post('rest/skinCharacter', params);
+            let res = await this.$http.post('rest/equipmentClassify', params);
 
             this.popupShow = false;
             this.$message({message: '保存成功', type: "success"});

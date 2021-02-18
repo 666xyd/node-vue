@@ -90,7 +90,7 @@
         <div class="button-bg">
             <div class="button-control">
                 <el-button style="color: #666;" v-if="$route.name === 'skinEdit'" @click="deleteSkin">删除</el-button>
-                <el-button style="color: #666;">取 消</el-button>
+                <el-button style="color: #666;" @click="toCancel">取 消</el-button>
                 <el-button type="primary" @click="submit()">保 存</el-button>
             </div>
         </div>
@@ -252,6 +252,17 @@
                         message: '删除成功!'
                     });
                     this.$router.push({name: 'skinList'});
+                })
+            },
+
+            //取消
+            toCancel(){
+                this.$confirm(`是否取消编辑?`, '提示', {
+                    confirmButtonText: '确定',
+                    cancelButtonText: '取消',
+                    type: 'warning'
+                }).then( () => {
+                    this.$router.back();
                 })
             },
 

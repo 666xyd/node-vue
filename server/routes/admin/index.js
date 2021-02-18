@@ -55,6 +55,24 @@ module.exports = app => {
         res.send(list);
     })
 
+    //装备列表  根据装备分类返回不同的列表
+    router.get('/equipmentClassify/:classify', async (req, res) => {
+        const list = await req.Model.find({"classify": {$regex: req.params.classify}});
+        res.send(list);
+    })
+
+    //装备列表  根据装备id返回装备信息
+    router.get('/equipmentId/:id', async (req, res) =>{
+        const item = await req.Model.findById(req.params.id);
+        res.send(item);
+    })
+
+    //根据装备名称返回列表
+    router.get('/equipmentName/:name', async (req, res) => {
+        const list = await req.Model.find({"name": {$regex: req.params.name}});
+        res.send(list);
+    })
+
 
     //编辑
     router.put('/:id', async (req, res) => {

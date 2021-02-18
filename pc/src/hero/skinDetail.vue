@@ -24,6 +24,11 @@
                     </span>
                 </div>
 
+                <div>
+                    <span class="title">皮肤性质：</span>
+                    <Span>{{skin.character}}</Span>
+                </div>
+
                 <div v-if="payShow">
                     <span class="title">英雄售价：</span>
                     <span class="value" v-if="skin.way.includes('点券')">{{skin.coupon}}点券 </span>
