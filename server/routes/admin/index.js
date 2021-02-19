@@ -73,6 +73,12 @@ module.exports = app => {
         res.send(list);
     })
 
+    //根据召唤师技能名称返回列表
+    router.get('/heroSkill/:name', async (req, res) => {
+        const list =await req.Model.find({"name": {$regex : req.params.name}});
+        res.send(list);
+    })
+
 
     //编辑
     router.put('/:id', async (req, res) => {

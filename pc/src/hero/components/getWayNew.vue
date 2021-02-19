@@ -1,6 +1,6 @@
 <template>
     <div class="dialog">
-        <el-dialog title="新增获取方式" :modal-append-to-body="true" :visible.sync="popupShow">
+        <el-dialog :title="title" :modal-append-to-body="true" :visible.sync="popupShow">
             <el-form label-width="140px">
                 <el-form-item label="获取方式名称：" class="required">
                     <el-input placeholder="请输入获取方式名称" v-model="way" style="width: 348px;"></el-input>
@@ -8,7 +8,7 @@
                 </el-form-item>
 
                 <el-form-item label="描述：" class="required">
-                    <el-input placeholder="请输入描述" v-model="describe" style="width: 348px"></el-input>
+                    <el-input placeholder="请输入描述" v-model="describe" style="width: 348px" type="textarea" autosize></el-input>
                     <alarm-text text="获取方式描述不可以为空" :empty="describeError"></alarm-text>
                 </el-form-item>
 
@@ -41,6 +41,7 @@
                 comment: '',                    //备注内容
                 wayError: false,           //获取方式名称输入格式错误
                 describeError: false,           //描述没有填入时的提示
+                title: '新增获取方式',
             }
         },
         props: {
@@ -50,6 +51,18 @@
             },
             type: {
                 type: String,
+            },
+            isEdit: {
+                type: Boolean,
+                default: false,
+            },
+            editItem: {
+                type: Object,
+                default: () => {
+                    return {
+
+                    }
+                }
             }
         },
         watch: {
@@ -58,6 +71,14 @@
             },
             popupShow(newValue){
                 this.$emit('input')
+            }
+        },
+        created() {
+            if(this.isEdit === true){
+                this.way = this.editItem.name;
+                this.describe = this.editItem.describe;
+                this.comment = this.editItem.comment;
+                this.title = '编辑获取方式';
             }
         },
         methods: {
@@ -89,7 +110,14 @@
                     comment: this.comment,
                 }
 
-                let res = await this.$http.post(`rest/${this.type}`, params);
+                let res;
+
+                if(this.isEdit){
+                    //编辑
+                    res = await this.$http.put(`rest/${this.type}/${this.editItem._id}`, params)
+                }else{
+                    res =  await this.$http.post(`rest/${this.type}`, params);
+                }
 
                 this.popupShow = false;
                 this.$message({message: '保存成功', type: "success"});

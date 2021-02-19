@@ -369,11 +369,12 @@
 
     .content{
         display: flex;
-        justify-content: space-evenly;
+        justify-content: flex-start;
     }
 
     .content-left{
         width: 50%;
+        padding-left: 70px;
     }
 
     /*统一输入框的长度*/

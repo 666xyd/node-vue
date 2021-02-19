@@ -62,6 +62,10 @@
                                 url: 'heroNew',
                             },
                             {
+                                name: '召唤师技能',
+                                url: 'heroSkill'
+                            },
+                            {
                                 name: '分类列表',
                                 url: 'heroClassify',
                             },
@@ -123,6 +127,18 @@
                             }
                         ],
                     },
+                    {
+                        id: 4,
+                        title: '系统参数',
+                        icon: 'el-icon-setting',
+                        list: [],
+                        children: [
+                            {
+                                name: '系统分类',
+                                url: 'settingClassify',
+                            }
+                        ],
+                    }
                 ],
                 explain_title: '',
                 explain_word: '',

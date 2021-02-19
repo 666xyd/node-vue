@@ -9,6 +9,7 @@ const schema = new mongoose.Schema({
     coupon: {type: Number},
     date: {type: String},
     classify: {type: Array},
+    skillList: {type: Array},
     describe: {type: String},
 })
 

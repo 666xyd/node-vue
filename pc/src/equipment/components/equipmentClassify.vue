@@ -1,6 +1,6 @@
 <template>
     <div class="dialog">
-        <el-dialog title="新增装备分类" :modal-append-to-body="true" :visible.sync="popupShow">
+        <el-dialog :title="title" :modal-append-to-body="true" :visible.sync="popupShow">
             <el-form label-width="140px">
                 <el-form-item label="装备分类：" class="required">
                     <el-input placeholder="请输入装备分类" v-model="name" style="width: 348px;"></el-input>
@@ -41,6 +41,7 @@ export default {
             comment: '',                    //备注内容
             nameError: false,           //装备分类输入格式错误
             describeError: false,           //描述没有填入时的提示
+            title: '',
         }
     },
     props: {
@@ -48,6 +49,22 @@ export default {
             type: Boolean,
             default: false,
         },
+        //是否是编辑弹窗
+        isEdit: {
+            type: Boolean,
+            default: false,
+        },
+        //编辑的对象
+        editItem: {
+            type: Object,
+            default: () => {
+                return {
+                    name: '',
+                    comment: '',
+                    describe: '',
+                }
+            }
+        }
     },
     watch: {
         value(newValue){
@@ -56,6 +73,15 @@ export default {
         popupShow(newValue){
             this.$emit('input')
         }
+    },
+    created() {
+        this.title = this.isEdit ? '编辑分类' : '新增分类';
+        if(this.isEdit){
+            this.name = this.editItem.name;
+            this.describe = this.editItem.describe;
+            this.comment = this.editItem.comment;
+        }
+
     },
     methods: {
         //取消按钮
@@ -86,7 +112,15 @@ export default {
                 comment: this.comment,
             }
 
-            let res = await this.$http.post('rest/equipmentClassify', params);
+
+            let res ;
+            if(this.isEdit){
+                //编辑
+                res = await this.$http.put(`rest/equipmentClassify/${this.editItem._id}`,params);
+            }else{
+                //新增
+                res = await this.$http.post('rest/equipmentClassify', params);
+            }
 
             this.popupShow = false;
             this.$message({message: '保存成功', type: "success"});

@@ -509,6 +509,10 @@ a{
     font-weight: 500;
 }
 
+.fw700 {
+    font-weight: 700;
+}
+
 .cl-green{
     color: #00C191;
 }

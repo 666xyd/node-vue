@@ -1,10 +1,13 @@
 <template>
     <div class="hero-new initMain">
         <div class="">
-            <div class="title">英雄信息</div>
             <div class="content">
                 <div class="content-left">
-                    <el-form label-width="100px">
+                    <div class="title">
+                        <i class="el-icon-user-solid"></i>
+                        英雄信息
+                    </div>
+                    <el-form label-width="100px" style="padding-left: 70px">
                         <!-- 英雄图片 -->
                         <el-form-item label="英雄图片：" class="required">
                             <el-upload
@@ -66,14 +69,62 @@
                             <alarm-text text="请选择英雄分类" :empty="classifyError"></alarm-text>
                             <span class="add" @click="classifyNew">+新增英雄分类</span>
                         </el-form-item>
-                    </el-form>
-                </div>
-                <div class="content-right">
-                    <el-form label-width="100px">
+
+                        <!-- 英雄描述 -->
                         <el-form-item label="英雄描述：" class="required">
-                            <el-input type="textarea" v-model="describe"></el-input>
+                            <el-input type="textarea" v-model="describe" :autosize="{ minRows: 2, maxRows: 9}"></el-input>
                             <alarm-text text="请输入英雄描述" :empty="describeError"></alarm-text>
                         </el-form-item>
+                    </el-form>
+                </div>
+
+                <div class="content-right">
+                    <div class="title">
+                        <i class="el-icon-reading"></i>
+                        技能描述
+                    </div>
+                    <el-form label-width="100px" style="padding-left: 70px">
+                        <template v-for="(item, index) in skillList">
+                            <div :key="index">
+                                <div class="fw700">{{item.title}}</div>
+                                <el-form-item label="名称：">
+                                    <el-input v-model="item.name"></el-input>
+                                </el-form-item>
+
+                                <el-form-item label="图标：">
+                                    <el-upload
+                                        class="avatar-uploader"
+                                        :action="$http.defaults.baseURL + '/upload'"
+                                        :show-file-list="false"
+                                        :on-success="res => item.pic = res.url" >
+                                        <img v-if="item.pic" :src="item.pic" class="avatar">
+                                        <i v-else class="el-icon-plus avatar-uploader-icon"></i>
+                                    </el-upload>
+                                </el-form-item>
+
+                                <el-form-item label="冷却：">
+                                    <el-input v-model="item.cooling"></el-input>
+                                </el-form-item>
+
+                                <el-form-item label="消耗：">
+                                    <el-input v-model="item.consume"></el-input>
+                                </el-form-item>
+
+                                <el-form-item label="描述：" >
+                                    <el-input type="textarea" v-model="item.describe" :autosize="{ minRows: 2, maxRows: 9}"></el-input>
+                                </el-form-item>
+                            </div>
+                        </template>
+                        <div class="addSkill" @click="addSkill" v-if="isAddSkill">
+                            <i class="el-icon-circle-plus-outline"></i>
+                            <span style="margin-left: 6px">添加技能</span>
+                        </div>
+
+                        <div class="addSkill" @click="deleteSkill" v-else>
+                            <i class="el-icon-remove-outline"></i>
+                            <span style="margin-left: 6px">删除技能</span>
+                        </div>
+
                     </el-form>
                 </div>
             </div>
@@ -135,6 +186,43 @@
                 couponError: false,
                 describe: '',              //英雄描述
                 describeError: false,
+
+                skillList: [
+                    {
+                        title: '被动',
+                        name: '',
+                        pic: '',
+                        cooling: '',
+                        consume: '',
+                        describe: '',
+                    },
+                    {
+                        title: '技能一',
+                        name: '',
+                        pic: '',
+                        cooling: '',
+                        consume: '',
+                        describe: '',
+                    },
+                    {
+                        title: '技能二',
+                        name: '',
+                        pic: '',
+                        cooling: '',
+                        consume: '',
+                        describe: '',
+                    },
+                    {
+                        title: '技能三',
+                        name: '',
+                        pic: '',
+                        cooling: '',
+                        consume: '',
+                        describe: '',
+                    },
+                ],             //技能组合
+
+                isAddSkill: true,
             }
         },
         async created() {
@@ -152,7 +240,75 @@
                 this.date = item.date;
                 this.money = item.money;
                 this.describe = item.describe;
+                this.skillList = item.skillList;
                 this.wayChoose(this.way);
+            }
+            if(this.skillList.length === 5){
+                this.isAddSkill = false;
+            }
+        },
+        watch: {
+            async "$route.name"(){
+                if(this.$route.params.id){
+                    let res = await this.$http.get(`rest/heroInfo/heroId/${this.$route.params.id}`)
+                    let item = res.data;
+                    this.pic = item.pic;
+                    this.name = item.name;
+                    this.way = item.way;
+                    this.chip = item.chip;
+                    this.classify = item.classify;
+                    this.coupon = item.coupon;
+                    this.date = item.date;
+                    this.money = item.money;
+                    this.describe = item.describe;
+                    this.skillList = item.skillList;
+                    this.wayChoose(this.way);
+                }else{
+                    this.pic = '';
+                    this.name = '';
+                    this.way =[];
+                    this.chip = '';
+                    this.classify = '';
+                    this.coupon = '';
+                    this.date = '';
+                    this.money = '';
+                    this.describe = '';
+                    this.skillList = [
+                        {
+                            title: '被动',
+                            name: '',
+                            pic: '',
+                            cooling: '',
+                            consume: '',
+                            describe: '',
+                        },
+                        {
+                            title: '技能一',
+                            name: '',
+                            pic: '',
+                            cooling: '',
+                            consume: '',
+                            describe: '',
+                        },
+                        {
+                            title: '技能二',
+                            name: '',
+                            pic: '',
+                            cooling: '',
+                            consume: '',
+                            describe: '',
+                        },
+                        {
+                            title: '技能三',
+                            name: '',
+                            pic: '',
+                            cooling: '',
+                            consume: '',
+                            describe: '',
+                        },
+                    ];
+                    this.isAddSkill = true;
+                }
             }
         },
         methods: {
@@ -191,6 +347,70 @@
             afterUpload(res){
                 window.console.log(res);
                 this.pic = res.url;
+            },
+
+            //增加技能
+            addSkill(){
+                let skillList;
+                if(this.skillList.length > 0){
+                    skillList = this.skillList;
+                    this.skillList = skillList.concat({
+                        title: '技能四',
+                        name: '',
+                        pic: '',
+                        cooling: '',
+                        consume: '',
+                        describe: '',
+                    })
+                }else{
+                    this.skillList = [
+                        {
+                            title: '被动',
+                            name: '',
+                            pic: '',
+                            cooling: '',
+                            consume: '',
+                            describe: '',
+                        },
+                        {
+                            title: '技能一',
+                            name: '',
+                            pic: '',
+                            cooling: '',
+                            consume: '',
+                            describe: '',
+                        },
+                        {
+                            title: '技能二',
+                            name: '',
+                            pic: '',
+                            cooling: '',
+                            consume: '',
+                            describe: '',
+                        },
+                        {
+                            title: '技能三',
+                            name: '',
+                            pic: '',
+                            cooling: '',
+                            consume: '',
+                            describe: '',
+                        },
+                    ];
+                }
+
+                if(this.skillList.length === 4){
+                    this.isAddSkill = true;
+                }else{
+                    this.isAddSkill = false;
+                }
+
+            },
+
+            //删除技能
+            deleteSkill(){
+                this.isAddSkill = true;
+                this.skillList.pop();
             },
 
             //新增获取方式点击保存
@@ -331,6 +551,7 @@
                     date: this.date,
                     classify: this.classify,
                     describe: this.describe,
+                    skillList: this.skillList,
                 }
 
                 let res = null;
@@ -351,6 +572,9 @@
 </script>
 
 <style scoped>
+    .hero-new{
+        margin-bottom: 90px;
+    }
 
     .title {
         color: #666;
@@ -361,7 +585,8 @@
 
     .content{
         display: flex;
-        justify-content: space-evenly;
+        justify-content: flex-start;
+        padding-bottom: 20px;
     }
 
     .content-left{
@@ -375,7 +600,7 @@
 
     .hero-new >>> .el-textarea__inner{
         width: 424px;
-        min-height: 204px!important;
+        /*min-height: 204px!important;*/
     }
 
     .add{
@@ -419,4 +644,43 @@
         height: 98px;
         display: block;
     }
+
+    .content-right >>> .el-textarea__inner{
+        width: 424px;
+        /*min-height: 104px!important;*/
+    }
+
+    .content-right .avatar-uploader-icon {
+        font-size: 28px;
+        color: #8c939d;
+        width: 58px;
+        height: 58px;
+        line-height: 58px;
+        text-align: center;
+    }
+   .content-right .avatar {
+        width: 58px;
+        height: 58px;
+        display: block;
+    }
+
+   .content-right >>> .avatar-uploader .el-upload{
+        border-radius: 50%;
+   }
+
+   .addSkill{
+       display: flex;
+       align-items: center;
+       justify-content: flex-end;
+       transition: 0.3s;
+       cursor: pointer;
+   }
+
+    .addSkill >>> .el-icon-circle-plus-outline, .addSkill >>> .el-icon-remove-outline{
+       font-size: 34px;
+   }
+
+    .addSkill:hover{
+       color: #999999;
+   }
 </style>

@@ -1,6 +1,6 @@
 <template>
     <div class="dialog">
-        <el-dialog title="新增皮肤性质" :modal-append-to-body="true" :visible.sync="popupShow">
+        <el-dialog :title="title" :modal-append-to-body="true" :visible.sync="popupShow">
             <el-form label-width="140px">
                 <el-form-item label="皮肤性质：" class="required">
                     <el-input placeholder="请输入皮肤性质" v-model="name" style="width: 348px;"></el-input>
@@ -8,7 +8,7 @@
                 </el-form-item>
 
                 <el-form-item label="描述：" class="required">
-                    <el-input placeholder="请输入描述" v-model="describe" style="width: 348px"></el-input>
+                    <el-input placeholder="请输入描述" v-model="describe" style="width: 348px" type="textarea" autosize></el-input>
                     <alarm-text text="皮肤性质描述不可以为空" :empty="describeError"></alarm-text>
                 </el-form-item>
 
@@ -41,6 +41,7 @@ export default {
             comment: '',                    //备注内容
             nameError: false,           //皮肤性质输入格式错误
             describeError: false,           //描述没有填入时的提示
+            title: '新增皮肤性质',
         }
     },
     props: {
@@ -48,6 +49,18 @@ export default {
             type: Boolean,
             default: false,
         },
+        isEdit: {
+            type: Boolean,
+            default: false,
+        },
+        editItem: {
+            type: Object,
+            default: () => {
+                return {
+
+                }
+            }
+        }
     },
     watch: {
         value(newValue){
@@ -55,6 +68,14 @@ export default {
         },
         popupShow(newValue){
             this.$emit('input')
+        }
+    },
+    created() {
+        if(this.isEdit === true){
+            this.name = this.editItem.name;
+            this.describe = this.editItem.describe;
+            this.comment = this.editItem.comment;
+            this.title = '编辑获取方式';
         }
     },
     methods: {
@@ -86,7 +107,14 @@ export default {
                 comment: this.comment,
             }
 
-            let res = await this.$http.post('rest/skinCharacter', params);
+            let res ;
+
+            if(this.isEdit){
+                //编辑
+                res = await this.$http.put(`rest/skinCharacter/${this.editItem._id}`, params)
+            }else{
+                res = await this.$http.post('rest/skinCharacter', params);
+            }
 
             this.popupShow = false;
             this.$message({message: '保存成功', type: "success"});
