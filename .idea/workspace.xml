@@ -2,48 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d55bdcc2-34d5-4ae5-aaef-cc2de416f6f2" name="默认更改列表" comment="">
-      <change afterPath="$PROJECT_DIR$/pc/src/article/articleDetail.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pc/src/article/components/articleClassify.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pc/src/setting/components/settingArticle.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pc/src/strategy/strategyDetail.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/models/ArticleClassify.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/models/ArticleInfo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/models/StrategyInfo.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/uploads/00f0d55bf80249a95617c953dcd5208e" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/uploads/0753f5269431fc98fcf5b3da0c7ad63e" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/uploads/3df69334a36957efc8500aa1069c1fe3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/uploads/48375b835bb667602f8c6d248f6dde4b" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/uploads/4a62a4c5def981333cb176f8e7c1b872" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/uploads/4a72ed17f73e60a6753c852cb6549e17" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/uploads/61dab4a0af55b2d3749851fe3ed4de5c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/uploads/637bc86b60b610239b27296b403134e0" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/uploads/6893ff978bcbb76d37e63a61ba212f81" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/uploads/77f60eaa13a0ebd42be93eea4b44c175" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/uploads/98b5377d7ceee2c4f34e4b28a886101a" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/uploads/a2e7ae46558fcd48b6d6b366e267d839" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/uploads/a9390928c30b367fd8cabdb58ee3cae1" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/uploads/b916d52dbfb0012defef7ea616557246" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/uploads/bee5648db0fcd00c42370378099e1571" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/uploads/c8d55dbb0cdda38baa586060d7c75e7f" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/uploads/d23298ae52279af36699adea7aa60f7f" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/uploads/ea47b7df5d766dee17525c5cf7d2c5b3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/uploads/fccc638875257645664e56492e1c1fb1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pc/src/admin/adminList.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pc/src/admin/components/adminNew.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/models/AdminInfo.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pc/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/pc/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pc/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/pc/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pc/src/article/articleList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pc/src/article/articleList.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pc/src/article/articleNew.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pc/src/article/articleNew.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pc/src/bread.js" beforeDir="false" afterPath="$PROJECT_DIR$/pc/src/bread.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pc/src/equipment/components/equipmentClassify.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pc/src/equipment/components/equipmentClassify.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pc/src/hero/heroList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pc/src/hero/heroList.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pc/src/hero/heroNew.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pc/src/hero/heroNew.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pc/src/main.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pc/src/main.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pc/src/pc_public.css" beforeDir="false" afterPath="$PROJECT_DIR$/pc/src/pc_public.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pc/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pc/src/router/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pc/src/setting/settingClassify.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pc/src/setting/settingClassify.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pc/src/strategy/strategyList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pc/src/strategy/strategyList.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pc/src/strategy/strategyNew.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pc/src/strategy/strategyNew.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/models/HeroInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/HeroInfo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes/admin/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/admin/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pc/src/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/pc/src/utils.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,8 +21,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
-        <option value="JavaScript File" />
         <option value="Vue Single File Component" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -120,7 +87,7 @@
       <workItem from="1613709764805" duration="24182000" />
       <workItem from="1613796365079" duration="1386000" />
       <workItem from="1613798870550" duration="13842000" />
-      <workItem from="1613882874888" duration="7671000" />
+      <workItem from="1613882874888" duration="14810000" />
     </task>
     <servers />
   </component>
@@ -135,10 +102,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1613130655342" />
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1613736280143">
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1613908666705">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1613736280143" />
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1613908666705" />
     <state x="750" y="221" key="RollbackChangesDialog" timestamp="1613740727138">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

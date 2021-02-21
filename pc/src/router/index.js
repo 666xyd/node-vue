@@ -35,6 +35,9 @@ import settingClassify from "../setting/settingClassify";                       
 // import settingSkinCharacter from "../setting/components/settingSkinCharacter";     //皮肤性质
 // import settingEquipment from "../setting/components/settingEquipment";             //装备分类
 
+//管理员列表
+import adminList from "@/admin/adminList";                         //管理员列表
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -81,6 +84,9 @@ const routes = [
                 //     {path: 'equipment/classify', name: 'settingEquipment', component: settingEquipment},
                 // ],
             },
+
+            //管理员列表
+            {path: 'admin/list',name: 'adminList', component: adminList},                          //管理员列表
         ]
     },
 

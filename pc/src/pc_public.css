@@ -252,6 +252,16 @@ a{
     left: 52px !important;
 }
 
+.el-menu-item{
+    height: 50px!important;
+    line-height: 50px!important;
+
+}
+
+.el-menu--popup{
+    padding: 0!important;
+}
+
 /*侧边栏的标题hover的时候背景颜色改变*/
 .el-menu--vertical .el-menu-item:hover{
     background: linear-gradient(to right,rgba(3,170,114,.15) 0%,rgba(5,184,124,.15) 100%);

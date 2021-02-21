@@ -30,4 +30,7 @@ export default {
 
     //系统参数
     settingClassify: {title: '系统分类', text: ''},
+
+    //管理员列表
+    adminList: {title: '管理员列表', text: ''},
 }
