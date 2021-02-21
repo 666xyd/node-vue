@@ -20,11 +20,13 @@ export default {
     strategyList: {title: '攻略列表', text: ''},
     strategyNew: {title: '新增攻略', text: ''},
     strategyEdit: {title: '编辑攻略', text: ''},
+    strategyDetail: {title: '攻略详情', text: ''},
 
     //文章管理
     articleList: {title: '文章列表', text: ''},
     articleNew: {title: '新增文章', text: ''},
     articleEdit: {title: '编辑文章', text: ''},
+    articleDetail: {title: '文章详情', text: ''},
 
     //系统参数
     settingClassify: {title: '系统分类', text: ''},

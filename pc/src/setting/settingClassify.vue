@@ -13,6 +13,9 @@
             <el-tab-pane label="装备分类" name="fourth">
                 <setting-equipment></setting-equipment>
             </el-tab-pane>
+            <el-tab-pane label="文章分类" name="fifth">
+               <setting-article></setting-article>
+            </el-tab-pane>
         </el-tabs>
     </div>
 </template>
@@ -22,6 +25,7 @@
     import settingSkinGet from "./components/settingSkinGet";
     import settingSkinCharacter from "./components/settingSkinCharacter";
     import settingEquipment from "./components/settingEquipment";
+    import settingArticle from "./components/settingArticle";
     export default {
         name: "settingClassify",
         data(){
@@ -33,7 +37,8 @@
             settingHeroGet,
             settingSkinGet,
             settingSkinCharacter,
-            settingEquipment
+            settingEquipment,
+            settingArticle
         },
         created() {
 

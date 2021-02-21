@@ -11,6 +11,7 @@ const schema = new mongoose.Schema({
     classify: {type: Array},
     skillList: {type: Array},
     describe: {type: String},
+    score: {type: Number},
 })
 
 module.exports = mongoose.model('HeroInfo', schema)

@@ -129,7 +129,7 @@
                     },
                     {
                         id: 4,
-                        title: '系统参数',
+                        title: '系统管理',
                         icon: 'el-icon-setting',
                         list: [],
                         children: [

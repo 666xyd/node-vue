@@ -19,10 +19,14 @@ import equipmentNew from "../equipment/equipmentNew";              //新增装�
 //攻略管理
 import strategyList from "../strategy/strategyList";               //攻略列表
 import strategyNew from "../strategy/strategyNew";                 //新增攻略
+import strategyEdit from "../strategy/strategyNew";                //编辑攻略
+import strategyDetail from "@/strategy/strategyDetail";            //攻略详情
 
 //文章管理
 import articleList from "../article/articleList";                  //文章列表
 import articleNew from "../article/articleNew";                    //新增文章
+import articleEdit from "../article/articleNew";                   //编辑文章
+import articleDetail from "../article/articleDetail";              //文章详情
 
 //系统参数
 import settingClassify from "../setting/settingClassify";                          //系统分类
@@ -58,10 +62,14 @@ const routes = [
             //攻略管理
             {path: 'strategy/list', name: 'strategyList', component: strategyList},                //攻略列表
             {path: 'strategy/new', name: 'strategyNew', component: strategyNew},                   //新增攻略
+            {path: 'strategy/edit/:id', name: 'strategyEdit', component: strategyEdit},            //编辑攻略
+            {path: 'strategy/detail/:id', name: 'strategyDetail', component: strategyDetail},      //攻略详情
 
             //文章管理
             {path: 'article/list', name: 'articleList', component: articleList},                   //文章列表
             {path: 'article/new', name: 'articleNew', component: articleNew},                      //新增文章
+            {path: 'article/edit/:id', name: 'articleEdit', component: articleEdit},               //编辑文章
+            {path: 'article/detail/:id', name: 'articleDetail', component: articleDetail},         //文章详情
 
             //系统参数
             {

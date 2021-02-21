@@ -70,6 +70,10 @@
                             <span class="add" @click="classifyNew">+新增英雄分类</span>
                         </el-form-item>
 
+                        <el-form-item label="英雄难度：" class="al-center score">
+                            <el-rate v-model="score" :colors="scoreColor"></el-rate>
+                        </el-form-item>
+
                         <!-- 英雄描述 -->
                         <el-form-item label="英雄描述：" class="required">
                             <el-input type="textarea" v-model="describe" :autosize="{ minRows: 2, maxRows: 9}"></el-input>
@@ -186,6 +190,8 @@
                 couponError: false,
                 describe: '',              //英雄描述
                 describeError: false,
+                score: null,
+                scoreColor: ['#E6A23C','#67C23A', '#00C191'],
 
                 skillList: [
                     {
@@ -239,6 +245,7 @@
                 this.coupon = item.coupon;
                 this.date = item.date;
                 this.money = item.money;
+                this.score = item.score;
                 this.describe = item.describe;
                 this.skillList = item.skillList;
                 this.wayChoose(this.way);
@@ -260,19 +267,22 @@
                     this.coupon = item.coupon;
                     this.date = item.date;
                     this.money = item.money;
+                    this.score = item.score;
                     this.describe = item.describe;
                     this.skillList = item.skillList;
                     this.wayChoose(this.way);
                 }else{
                     this.pic = '';
                     this.name = '';
-                    this.way =[];
+                    this.way = [];
                     this.chip = '';
                     this.classify = '';
                     this.coupon = '';
                     this.date = '';
                     this.money = '';
                     this.describe = '';
+                    this.score = null;
+                    this.wayChoose(this.way);
                     this.skillList = [
                         {
                             title: '被动',
@@ -427,12 +437,18 @@
             wayChoose(choose){
                 if(choose.includes('金币')){
                     this.moneyWayShow = true;
+                }else{
+                    this.moneyWayShow = false;
                 }
                 if(choose.includes('英雄碎片')){
                     this.chipWayShow = true;
+                }else{
+                    this.chipWayShow = false;
                 }
                 if(choose.includes('点券')){
                     this.couponWayShow = true;
+                }else{
+                    this.couponWayShow = false;
                 }
             },
 
@@ -552,6 +568,7 @@
                     classify: this.classify,
                     describe: this.describe,
                     skillList: this.skillList,
+                    score: this.score,
                 }
 
                 let res = null;
@@ -683,4 +700,8 @@
     .addSkill:hover{
        color: #999999;
    }
+
+    .score >>> .el-form-item__content{
+        margin-left: 0!important;
+    }
 </style>

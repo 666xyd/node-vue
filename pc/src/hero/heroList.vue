@@ -125,6 +125,7 @@
             //点击树形控件
             handleNodeClick(val) {
                 this.searchText = '';
+                this.params.category_id = val.id;
                 if(val.id === 0){
                     //点击的是'全部'
                     this.getHeroList();
@@ -168,7 +169,10 @@
                         type: 'success',
                         message: '删除成功!'
                     });
-                    this.getHeroList();
+                    this.$nextTick(() => {
+                        this.$refs.elTree && this.$refs.elTree.setCurrentKey(this.params.category_id)
+                    })
+                    this.handleNodeClick(this.heroTypeList[this.params.category_id]);
                 })
             },
 

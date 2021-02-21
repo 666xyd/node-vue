@@ -79,6 +79,36 @@ module.exports = app => {
         res.send(list);
     })
 
+    //根据攻略id返回该攻略信息
+    router.get('/strategyId/:id', async (req, res) => {
+        const item = await req.Model.findById(req.params.id);
+        res.send(item);
+    })
+
+    //根据攻略题目返回攻略信息
+    router.get('/strategyTitle/:title', async (req, res) => {
+        const list =await req.Model.find({"title": {$regex : req.params.title}});
+        res.send(list);
+    })
+
+    //根据文章id返回该文章信息
+    router.get('/articleId/:id', async (req, res) => {
+        const item = await req.Model.findById(req.params.id);
+        res.send(item);
+    })
+
+    //根据文章分类返回文章列表
+    router.get('/articleClassify/:classify', async (req, res) => {
+        const list = await req.Model.find({"name": {$regex: req.params.classify}});
+        res.send(list);
+    })
+
+    //根据文章题目返回文章信息
+    router.get('/articleTitle/:title', async (req, res) => {
+        const list = await req.Model.find({"title": {$regex : req.params.title}});
+        res.send(list);
+    })
+
 
     //编辑
     router.put('/:id', async (req, res) => {
