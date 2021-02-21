@@ -13,7 +13,7 @@
                 </el-form-item>
 
                 <el-form-item label="手机号码：" class="required">
-                    <el-input placeholder="请输入手机号码" v-model="phone" style="width: 348px;" maxlength="11"></el-input>
+                    <el-input placeholder="请输入手机号码" v-model="phone" style="width: 348px;" maxlength="11" show-word-limit></el-input>
                     <alarm-text text="手机格式错误" :empty="phoneError"></alarm-text>
                 </el-form-item>
             </el-form>

@@ -2,15 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d55bdcc2-34d5-4ae5-aaef-cc2de416f6f2" name="默认更改列表" comment="">
-      <change afterPath="$PROJECT_DIR$/pc/src/admin/adminList.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pc/src/admin/components/adminNew.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/models/AdminInfo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pc/src/login/login.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pc/src/bread.js" beforeDir="false" afterPath="$PROJECT_DIR$/pc/src/bread.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pc/src/main.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pc/src/main.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pc/src/pc_public.css" beforeDir="false" afterPath="$PROJECT_DIR$/pc/src/pc_public.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pc/src/admin/components/adminNew.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pc/src/admin/components/adminNew.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pc/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pc/src/router/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pc/src/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/pc/src/utils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/models/AdminInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/AdminInfo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,8 +19,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
-        <option value="Vue Single File Component" />
         <option value="JavaScript File" />
+        <option value="Vue Single File Component" />
       </list>
     </option>
   </component>
@@ -87,7 +85,7 @@
       <workItem from="1613709764805" duration="24182000" />
       <workItem from="1613796365079" duration="1386000" />
       <workItem from="1613798870550" duration="13842000" />
-      <workItem from="1613882874888" duration="14810000" />
+      <workItem from="1613882874888" duration="17727000" />
     </task>
     <servers />
   </component>

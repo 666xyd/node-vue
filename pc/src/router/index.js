@@ -2,6 +2,9 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Pc from '../main.vue';
 
+//登录页面
+import login from '../login/login';                       //登录页面
+
 //英雄管理
 import heroList from '../hero/heroList';                  //英雄列表
 import heroNew from '../hero/heroNew';                    //新增英雄
@@ -41,6 +44,10 @@ import adminList from "@/admin/adminList";                         //管理员�
 Vue.use(VueRouter)
 
 const routes = [
+    {
+        //登录页面
+        path: '/admin/login', component: login,
+    },
     {
         path: '/pc', component: Pc,
         children: [
