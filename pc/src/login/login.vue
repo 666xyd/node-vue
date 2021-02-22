@@ -35,8 +35,20 @@
                 this.password = '';
             },
 
-            toLogin(){
-                this.$router.push({name: 'heroList'})
+            async toLogin(){
+                let params = {
+                    name: this.name,
+                    password: this.password,
+                }
+                let res = await this.$http.post('login', params);
+                //浏览器关闭下次再次打开还存在
+                localStorage.token = res.data.token;
+                //sessionStorage则是浏览器关闭就不存在了
+                await this.$router.push({name: 'heroList'})
+                this.$message({
+                    type: 'success',
+                    message: '登陆成功'
+                })
             }
         }
     }
@@ -54,7 +66,7 @@
 
     .login-card{
         position: absolute;
-        width: 35rem;
+        width: 30rem;
         left: 50%;
         top: 50%;
         transform: translateY(-50%) translateX(-50%);
@@ -66,12 +78,12 @@
     }
 
     .login >>> .el-form-item{
-        margin-bottom: 30px!important;
-        margin-top: 30px!important;
+        margin-bottom: 40px!important;
+        margin-top: 40px!important;
     }
 
     .login-bottom{
-        margin-top: 20px;
+        margin-top: 50px;
     }
 
     .login-bottom >>>.el-button{

@@ -46,7 +46,7 @@ Vue.use(VueRouter)
 const routes = [
     {
         //登录页面
-        path: '/admin/login', component: login,
+        path: '/admin/login', name: 'login', component: login, meta: { isPublic: true}
     },
     {
         path: '/pc', component: Pc,
@@ -103,6 +103,13 @@ const router = new VueRouter({
     mode: 'history',
     base: process.env.BASE_URL,
     routes
+})
+
+router.beforeEach((to, from, next) => {
+    if(!to.meta.isPublic && !localStorage.token){
+        return next('/admin/login');
+    }
+    next();
 })
 
 export default router

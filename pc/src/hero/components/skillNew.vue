@@ -12,6 +12,7 @@
                         class="avatar-uploader"
                         :action="$http.defaults.baseURL + '/upload'"
                         :show-file-list="false"
+                        :headers="getAuthHeaders()"
                         :on-success="res => icon = res.url" >
                         <img v-if="icon" :src="icon" class="avatar" style="width: 58px; height: 58px;">
                         <i v-else class="el-icon-plus avatar-uploader-icon" style="width: 58px; height: 58px;"></i>
@@ -24,6 +25,7 @@
                         class="avatar-uploader"
                         :action="$http.defaults.baseURL + '/upload'"
                         :show-file-list="false"
+                        :headers="getAuthHeaders()"
                         :on-success="res => pic = res.url" >
                         <img v-if="pic" :src="pic" class="avatar" style="width: 282px; height: 172px;">
                         <i v-else class="el-icon-plus avatar-uploader-icon" style="width: 282px; height: 172px;line-height: 172px;"></i>

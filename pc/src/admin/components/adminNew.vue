@@ -7,6 +7,18 @@
                     <alarm-text text="管理员名称不可以为空" :empty="nameError"></alarm-text>
                 </el-form-item>
 
+                <el-form-item label="头像：">
+                    <el-upload
+                        class="avatar-uploader"
+                        :action="$http.defaults.baseURL + '/upload'"
+                        :headers="getAuthHeaders()"
+                        :show-file-list="false"
+                        :on-success="res => pic = res.url">
+                        <img v-if="pic" :src="pic" class="avatar">
+                        <i v-else class="el-icon-plus avatar-uploader-icon"></i>
+                    </el-upload>
+                </el-form-item>
+
                 <el-form-item label="密码：" class="required">
                     <el-input placeholder="请输入密码" v-model="password" style="width: 348px" ></el-input>
                     <alarm-text :text="passwordText" :empty="passwordError"></alarm-text>
@@ -40,6 +52,7 @@ export default {
 
             name: '',
             nameError: false,
+            pic: '',
             password: '',
             passwordError: false,
             passwordText: '',
@@ -80,6 +93,7 @@ export default {
             this.name = this.editItem.name;
             this.password = this.editItem.password;
             this.phone = this.editItem.phone;
+            this.pic = this.editItem.pic;
             this.title = '编辑管理员';
         }
     },
@@ -124,6 +138,7 @@ export default {
                 name: this.name,
                 password: this.password,
                 phone: this.phone,
+                pic: this.pic,
                 date: utils.getCurrentTime(),
             }
 
@@ -145,5 +160,27 @@ export default {
 </script>
 
 <style scoped>
-
+.avatar-uploader >>>  .el-upload {
+    border: 1px dashed #d9d9d9;
+    border-radius: 6px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+.avatar-uploader  >>> .el-upload:hover {
+    border-color: #409EFF;
+}
+.avatar-uploader-icon {
+    font-size: 28px;
+    color: #8c939d;
+    width: 98px;
+    height: 98px;
+    line-height: 98px;
+    text-align: center;
+}
+.avatar {
+    width: 98px;
+    height: 98px;
+    display: block;
+}
 </style>

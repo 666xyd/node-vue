@@ -9,6 +9,7 @@ const schema = new mongoose.Schema({
             return require('bcrypt').hashSync(val, 10)
         }
     },
+    pic: {type: String},
     phone: {type: String},
     date: {type: String},
 })

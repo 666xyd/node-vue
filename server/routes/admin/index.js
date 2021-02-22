@@ -1,8 +1,11 @@
 module.exports = app => {
     const express = require('express')
+    const jwt = require('jsonwebtoken');
+    const assert = require('http-assert');
     const router = express.Router({
         mergeParams: true
     })
+    const AdminUser = require('../../models/AdminInfo');
 
 
     //新增
@@ -124,9 +127,18 @@ module.exports = app => {
         })
     })
 
+    //登陆校验中间件
+    const auth = async (req, res, next) => {
+        const token = String(req.headers.authorization || '').split(' ').pop();
+        assert(token, 401, '请先登录')
+        const { id } = jwt.verify(token, app.get('secret'))
+        assert(token, 401, '请先登录')
+        req.user = await AdminUser.findById(id)
+        assert(req.user, 401, '请先登录')
+        await next();
+    }
 
-
-    app.use('/admin/api/rest/:resource', async (req, res, next) => {
+    app.use('/admin/api/rest/:resource', auth, async (req, res, next) => {
         const modelName = require('inflection').classify(req.params.resource);
         req.Model = require(`../../models/${modelName}`)
         next()
@@ -135,9 +147,33 @@ module.exports = app => {
     //图片上传
     const multer = require('multer');
     const upload = multer({dest: __dirname + '/../../uploads'})
-    app.post('/admin/api/upload', upload.single('file'), async (req, res) => {
+    app.post('/admin/api/upload', auth, upload.single('file'), async (req, res) => {
         let file = req.file;
         file.url = `http://localhost:3000/uploads/${file.filename}`;
         res.send(file);
+    })
+
+    //登录
+    app.post('/admin/api/login', async (req, res) => {
+        const {name, password} = req.body;
+        //根据用户名找用户
+        const user = await AdminUser.findOne({name}).select('+password');
+        assert(user, 422, '用户不存在');    //该写法跟下面五行写法效果一样
+
+        //用户存在检验密码是否正确
+        const isValid = require('bcrypt').compareSync(password, user.password);
+        assert(isValid, 422, '密码错误');
+
+        //返回token
+        const token = jwt.sign({id: user._id}, app.get('secret'))
+        res.send({token});
+    })
+
+
+    //错误处理函数
+    app.use( async (err, req, res, next) => {
+         res.status(err.statusCode || 500).send({
+             message: err.message
+         })
     })
 }
