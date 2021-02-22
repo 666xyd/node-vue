@@ -5,7 +5,8 @@ Vue.use(Vuex)
 
 let initState = {
     per_num: 10,
-    tab_index: 0,
+    user_info: {},
+
 }
 
 export default new Vuex.Store({

@@ -43,6 +43,8 @@
                 let res = await this.$http.post('login', params);
                 //浏览器关闭下次再次打开还存在
                 localStorage.token = res.data.token;
+                localStorage.name = res.data.user.name;
+                localStorage.pic = res.data.user.pic;
                 //sessionStorage则是浏览器关闭就不存在了
                 await this.$router.push({name: 'heroList'})
                 this.$message({

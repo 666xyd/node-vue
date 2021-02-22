@@ -2,14 +2,17 @@
     <div class="admin-list initMain">
         <div class="list-form al-center">
             <add-button title="添加管理员" @add="add"></add-button>
-            <search title="搜索管理员姓名"></search>
+            <search title="搜索管理员姓名" @search="search" v-model="searchText"></search>
         </div>
 
         <div class="list-main">
             <el-table :data="adminList.slice((page - 1) * page_count, page * page_count)" :default-sort = "{prop: 'date', order: 'descending'}">
                 <el-table-column label="管理员姓名">
                     <template slot-scope="scope">
-                        {{scope.row.name}}
+                        <div class="al-center">
+                            <Avatar :width="120" :portrait="scope.row.pic" :text="scope.row.name"></Avatar>
+                            <span style="margin-left: 8px">{{scope.row.name}}</span>
+                        </div>
                     </template>
                 </el-table-column>
 
@@ -46,6 +49,7 @@
     import Search from "@/components/Search";
     import adminNew from "@/admin/components/adminNew";
     import Pagination from "@/components/Pagination";
+    import Avatar from "@/components/Avatar";
     export default {
         name: "adminList",
         data(){
@@ -63,7 +67,8 @@
             AddButton,
             Search,
             adminNew,
-            Pagination
+            Pagination,
+            Avatar
         },
         created() {
             this.getAdminList();
@@ -81,12 +86,24 @@
                 })
             },
 
+            //搜索
+            search(){
+                this.$nextTick(()=>{
+                    if(this.searchText){
+                        this.$http.get(`rest/adminInfo/adminName/${this.searchText}`).then((res)=>{
+                            this.adminList = res.data;
+                        })
+                    }else{
+                        this.getAdminList();
+                    }
+                })
+            },
+
             //编辑
             toEdit(row){
                 this.popupShow = true;
                 this.isEdit = true;
                 this.editItem = row;
-                window.console.log(this.editItem);
             },
 
             //删除

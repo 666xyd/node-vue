@@ -2,29 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d55bdcc2-34d5-4ae5-aaef-cc2de416f6f2" name="默认更改列表" comment="">
-      <change afterPath="$PROJECT_DIR$/server/uploads/2543fd273160e1d8a3c30bc458cd8c65" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/uploads/302da734177aafc12cc214c3acabc6bf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/uploads/575d99953f7aa224505e5334fb36a95f" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/uploads/62a38fc81fd9658f0ca90cc15a0a3b21" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/uploads/9e8d9064d57c9fff349219d69428357c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/uploads/e450afa045dd544878a0f7f11d2e9fd0" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/0ae6f5a0809572a07f8ed6e9be1e01cf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/20f5214bd9ffbee0810091caa999076a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/538dced3bedac63fbc9d70617cdbd8f1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/5a8e89f9990ba0d83038899d33a0c20d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/7b59fd1caed461abc7f0da94a18977f0" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/876f63550e18b2de11227f769ee7b907" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/f825cc44f777a5c7d4f6a0c0270daecb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pc/src/admin/adminList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pc/src/admin/adminList.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pc/src/admin/components/adminNew.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pc/src/admin/components/adminNew.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pc/src/article/articleNew.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pc/src/article/articleNew.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pc/src/components/Header.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pc/src/components/Header.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pc/src/equipment/equipmentNew.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pc/src/equipment/equipmentNew.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pc/src/hero/components/skillNew.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pc/src/hero/components/skillNew.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pc/src/hero/heroNew.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pc/src/hero/heroNew.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pc/src/hero/skinNew.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pc/src/hero/skinNew.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pc/src/http.js" beforeDir="false" afterPath="$PROJECT_DIR$/pc/src/http.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pc/src/login/login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pc/src/login/login.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pc/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/pc/src/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pc/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pc/src/router/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pc/src/strategy/strategyNew.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pc/src/strategy/strategyNew.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/models/AdminInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/AdminInfo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pc/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pc/src/store/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/routes/admin/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/admin/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -56,7 +47,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/workspace/dxsf" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -104,7 +95,7 @@
       <workItem from="1613798870550" duration="13842000" />
       <workItem from="1613882874888" duration="17809000" />
       <workItem from="1613969856897" duration="11524000" />
-      <workItem from="1613982761246" duration="354000" />
+      <workItem from="1613982761246" duration="9208000" />
     </task>
     <servers />
   </component>
@@ -119,10 +110,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1613130655342" />
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1613982632464">
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1613992877446">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1613982632464" />
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1613992877446" />
     <state x="750" y="221" key="RollbackChangesDialog" timestamp="1613740727138">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -139,10 +130,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="323" y="104" width="1201" height="926" key="dock-window-1/0.0.1920.1040@0.0.1920.1040" timestamp="1613359062220" />
-    <state x="465" y="93" width="1036" height="900" key="find.popup" timestamp="1613980186572">
+    <state x="465" y="93" width="1036" height="900" key="find.popup" timestamp="1613992741290">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="465" y="93" width="1036" height="900" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1613980186572" />
+    <state x="465" y="93" width="1036" height="900" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1613992741290" />
     <state x="603" y="242" key="run.anything.popup" timestamp="1613741333735">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

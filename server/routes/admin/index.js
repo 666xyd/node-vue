@@ -112,6 +112,12 @@ module.exports = app => {
         res.send(list);
     })
 
+    //根据管理员姓名返回其信息
+    router.get('/adminName/:name', async (req, res) => {
+        const list =await req.Model.find({"name": {$regex : req.params.name}});
+        res.send(list);
+    })
+
 
     //编辑
     router.put('/:id', async (req, res) => {
@@ -166,7 +172,16 @@ module.exports = app => {
 
         //返回token
         const token = jwt.sign({id: user._id}, app.get('secret'))
-        res.send({token});
+        res.send({token, user});
+    })
+
+    //修改密码
+    app.post('/admin/api/changePassword', async(req, res) => {
+        const {name, password} = req.body;
+        const user = await AdminUser.findOne({name}).select('+password');
+        const isValid = require('bcrypt').compareSync(password, user.password);
+        assert(isValid, 422, '旧密码错误');
+        res.send('ok');
     })
 
 
