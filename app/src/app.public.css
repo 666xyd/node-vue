@@ -32,6 +32,10 @@ li{
     color: #fff;
 }
 
+.bg-white{
+    background-color: #fff;
+}
+
 .fc-light{
     color: #f9f9f9;
 }
@@ -126,5 +130,34 @@ li{
 
 .flex-evenly{
     justify-content: space-evenly;
+}
+
+.slide-right-enter-active,
+.slide-right-leave-active,
+.slide-left-enter-active,
+.slide-left-leave-active {
+    /* will-change属性可以提前通知浏览器我们要对元素做什么动画，这样浏览器可以提前准备合适的优化设置 */
+    will-change: transform;
+    transition: all ease 0.5s;
+    -webkit-transition: all ease 0.5s;
+    position: absolute;
+    width: 100%;
+    left: 0;
+}
+.slide-right-enter {
+    transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+}
+.slide-right-leave-active {
+    transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+}
+.slide-left-enter {
+    transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+}
+.slide-left-leave-active {
+    transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
 }
 

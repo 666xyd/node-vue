@@ -1,10 +1,8 @@
 <template>
-    <div class="header bg-primary flex flex-center">
-        <template v-for="(item, index) in headerList">
-            <div :key="index" class="header-item fc-white">
-                {{item.title}}
-            </div>
-        </template>
+    <div class="header">
+        <van-tabs v-model="activeName" @click="clickTab" title-active-color="white" animated>
+            <van-tab  v-for="(item, index) in headerList" :title="item.title" :name="item.url" :key="index"></van-tab>
+        </van-tabs>
     </div>
 </template>
 
@@ -16,30 +14,46 @@
                 headerList: [
                     {
                         title: '首页',
-                        url: ''
+                        url: 'index'
                     },
                     {
-                        title: '攻略中心',
-                        url: '',
+                        title: '英雄信息',
+                        url: 'hero',
                     },
                     {
-                        title: '赛事中心',
-                        url: '',
+                        title: '装备信息',
+                        url: 'equip',
                     }
-                ]
+                ],
+                activeName: 'index',
+            }
+        },
+        components: {
+
+        },
+        created() {
+            if(this.$route.name.includes('index')){
+                this.activeName = 'index';
+            }else if(this.$route.name.includes('hero')){
+                this.activeName = 'hero';
+            }else if(this.$route.name.includes('equip')){
+                this.activeName = 'equip';
+            }
+        },
+        methods: {
+            clickTab(name,title){
+                this.$router.push({name: `${name}`});
             }
         }
     }
 </script>
 
 <style scoped>
-    .header{
-        height: 3.692rem;
-        line-height: 3.692rem;
+    .header >>> .van-tab{
+        background-color: #db9e3f;
     }
 
-    .header-item{
-        width: 33.3%;
-        text-align: center;
+    .header >>> .van-tabs__line{
+        background-color: white;
     }
 </style>

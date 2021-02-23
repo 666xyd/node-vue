@@ -2,12 +2,32 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Wap from '../main.vue';
 
+//首页
+import index from '../index/index';
+
+//英雄信息
+import hero from '../hero/hero';
+
+//装备信息
+import equip from '../equip/equip';
+
+
 Vue.use(VueRouter)
 
 const routes = [
     {
         path: '/app', component: Wap,
+        children: [
+            //首页
+            {path: 'index', name: 'index', component: index, meta: {index: 1}},
 
+
+            //英雄
+            {path: 'hero', name: 'hero', component: hero, meta: {index: 2}},
+
+            //装备
+            {path: 'equip', name: 'equip', component: equip, meta: {index: 3}},
+        ]
     }
 ]
 

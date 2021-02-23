@@ -2,18 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d55bdcc2-34d5-4ae5-aaef-cc2de416f6f2" name="默认更改列表" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/app.public.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/components/Header.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/wap.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/equip/equip.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/hero/hero.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/http.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/index/index.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/routes/wap/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/.eslintrc.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/.eslintrc.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/App.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/components/HelloWorld.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/app.public.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app.public.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/components/Header.vue" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Header.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main.vue" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/router/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/views/About.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/views/Home.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,9 +25,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="CSS File" />
         <option value="Vue Single File Component" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -44,7 +46,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/workspace/dxsf" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -58,15 +60,17 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Henry\node-vue\node-vue\app\src" />
+      <recent name="C:\Users\Henry\node-vue\node-vue\pc\node_modules\lodash" />
+      <recent name="C:\Users\Henry\node-vue\node-vue\pc\src\components" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Henry\node-vue\node-vue\app\src\index" />
       <recent name="C:\Users\Henry\node-vue\node-vue\app\src" />
       <recent name="C:\Users\Henry\node-vue\node-vue\server\models" />
       <recent name="C:\Users\Henry\node-vue\node-vue\server\models\hero" />
       <recent name="C:\Users\Henry\node-vue\node-vue\pc\src" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Henry\node-vue\node-vue\pc\node_modules\lodash" />
-      <recent name="C:\Users\Henry\node-vue\node-vue\pc\src\components" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -95,7 +99,7 @@
       <workItem from="1613969856897" duration="11524000" />
       <workItem from="1613982761246" duration="9208000" />
       <workItem from="1614055198178" duration="3568000" />
-      <workItem from="1614060052752" duration="3746000" />
+      <workItem from="1614060052752" duration="14648000" />
     </task>
     <servers />
   </component>
@@ -110,10 +114,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1613130655342" />
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1614065450349">
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1614066869008">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1614065450349" />
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1614066869008" />
     <state x="750" y="221" key="RollbackChangesDialog" timestamp="1613740727138">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
