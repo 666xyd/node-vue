@@ -2,21 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d55bdcc2-34d5-4ae5-aaef-cc2de416f6f2" name="默认更改列表" comment="">
-      <change afterPath="$PROJECT_DIR$/server/uploads/0ae6f5a0809572a07f8ed6e9be1e01cf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/uploads/20f5214bd9ffbee0810091caa999076a" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/uploads/538dced3bedac63fbc9d70617cdbd8f1" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/uploads/5a8e89f9990ba0d83038899d33a0c20d" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/uploads/7b59fd1caed461abc7f0da94a18977f0" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/uploads/876f63550e18b2de11227f769ee7b907" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/uploads/f825cc44f777a5c7d4f6a0c0270daecb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/app.public.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/components/Header.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/wap.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pc/src/admin/adminList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pc/src/admin/adminList.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pc/src/admin/components/adminNew.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pc/src/admin/components/adminNew.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pc/src/components/Header.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pc/src/components/Header.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pc/src/login/login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pc/src/login/login.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pc/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/pc/src/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pc/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pc/src/store/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes/admin/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/admin/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.eslintrc.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/.eslintrc.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/App.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/components/HelloWorld.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/views/About.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/views/Home.vue" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,8 +23,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="CSS File" />
         <option value="Vue Single File Component" />
       </list>
     </option>
@@ -56,19 +53,20 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.HTML" />
+    <property name="settings.editor.selected.configurable" value="px2rwdSettings" />
     <property name="ts.external.directory.path" value="D:\WebStorm 2020.2.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Henry\node-vue\node-vue\pc\node_modules\lodash" />
-      <recent name="C:\Users\Henry\node-vue\node-vue\pc\src\components" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Henry\node-vue\node-vue\app\src" />
       <recent name="C:\Users\Henry\node-vue\node-vue\server\models" />
       <recent name="C:\Users\Henry\node-vue\node-vue\server\models\hero" />
       <recent name="C:\Users\Henry\node-vue\node-vue\pc\src" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Henry\node-vue\node-vue\pc\node_modules\lodash" />
+      <recent name="C:\Users\Henry\node-vue\node-vue\pc\src\components" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -96,6 +94,8 @@
       <workItem from="1613882874888" duration="17809000" />
       <workItem from="1613969856897" duration="11524000" />
       <workItem from="1613982761246" duration="9208000" />
+      <workItem from="1614055198178" duration="3568000" />
+      <workItem from="1614060052752" duration="3746000" />
     </task>
     <servers />
   </component>
@@ -110,18 +110,18 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1613130655342" />
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1613992877446">
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1614065450349">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1613992877446" />
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1614065450349" />
     <state x="750" y="221" key="RollbackChangesDialog" timestamp="1613740727138">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="750" y="221" key="RollbackChangesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1613740727138" />
-    <state x="461" y="164" key="SettingsEditor" timestamp="1613121043617">
+    <state x="565" y="177" key="SettingsEditor" timestamp="1614060084748">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1613121043617" />
+    <state x="565" y="177" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1614060084748" />
     <state x="257" y="164" width="1283" height="747" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1613311878473">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -138,9 +138,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="603" y="242" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1613741333735" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1613981760671">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1614059751058">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1613981760671" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1614059751058" />
   </component>
 </project>
