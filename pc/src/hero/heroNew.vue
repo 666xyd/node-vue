@@ -75,10 +75,75 @@
                             <el-rate v-model="score" :colors="scoreColor"></el-rate>
                         </el-form-item>
 
+                        <!-- 召唤师技能   -->
+                        <el-form-item label="召唤师技能：">
+                            <el-select placeholder="请选择召唤师技能" v-model="heroSkill" multiple>
+                                <el-option v-for="item in heroSkillList" :key="item._id" :value="item.name + ' ' + item.pic" :label="item.name"></el-option>
+                            </el-select>
+                        </el-form-item>
+
+                        <!--  最佳搭档 -->
+                        <el-form-item label="最佳搭档：">
+                            <el-select placeholder="请选择最佳搭档" v-model="bestPartner" filterable multiple
+                                       @remove-tag="partnerRemove" @change="partnerChoose">
+                                <el-option  v-for="item in heroList" :key="item._id"  :label="item.name"
+                                            :value="item.name + ' ' + item.pic[0]" ></el-option>
+                            </el-select>
+                        </el-form-item>
+
+                        <template v-for="(item, index) in bestPartner">
+                            <el-form-item :label="item.split(' ')[0] + '：'" :key="index">
+                                <el-input v-model="bestPartnerDescribe[index]" type="textarea" :autosize="{ minRows: 2, maxRows: 9}"></el-input>
+                            </el-form-item>
+                        </template>
+
+                        <!-- 被谁克制 -->
+                        <el-form-item label="被谁克制：">
+                            <el-select placeholder="请选择被克制的英雄" v-model="restrainBy" filterable multiple
+                                       @change="restrainByChoose" @remove-tag="restrainByRemove">
+                                <el-option  v-for="item in heroList" :key="item._id" :value="item.name + ' ' + item.pic[0]" :label="item.name"></el-option>
+                            </el-select>
+                        </el-form-item>
+
+                        <template v-for="(item, index) in restrainBy">
+                            <el-form-item :label="item.split(' ')[0] + '：'" :key="'by'+index">
+                                <el-input v-model="restrainByDescribe[index]" type="textarea" :autosize="{ minRows: 2, maxRows: 9}"></el-input>
+                            </el-form-item>
+                        </template>
+
+                        <!--  克制谁 -->
+                        <el-form-item label="克制谁：">
+                            <el-select placeholder="请选择克制的英雄" v-model="restrainTo" filterable multiple
+                                       @change="restrainToChoose" @remove-tag="restrainToRemove">
+                                <el-option  v-for="item in heroList" :key="item._id" :value="item.name + ' ' + item.pic[0]" :label="item.name"></el-option>
+                            </el-select>
+                        </el-form-item>
+
+                        <template v-for="(item, index) in restrainTo">
+                            <el-form-item :label="item.split(' ')[0] + '：'" :key="'by'+index">
+                                <el-input v-model="restrainToDescribe[index]" type="textarea" :autosize="{ minRows: 2, maxRows: 9}"></el-input>
+                            </el-form-item>
+                        </template>
+
                         <!-- 英雄描述 -->
                         <el-form-item label="英雄描述：" class="required">
                             <el-input type="textarea" v-model="describe" :autosize="{ minRows: 2, maxRows: 9}"></el-input>
                             <alarm-text text="请输入英雄描述" :empty="describeError"></alarm-text>
+                        </el-form-item>
+
+                        <!--  使用技巧 -->
+                        <el-form-item label="使用技巧：">
+                            <el-input type="textarea" v-model="useSkill" :autosize="{ minRows: 2, maxRows: 9}"></el-input>
+                        </el-form-item>
+
+                        <!--  对抗技巧 -->
+                        <el-form-item label="对抗技巧：">
+                            <el-input type="textarea" v-model="fightSkill" :autosize="{ minRows: 2, maxRows: 9}"></el-input>
+                        </el-form-item>
+
+                        <!--  团战思路 -->
+                        <el-form-item label="团战思路：">
+                            <el-input type="textarea" v-model="fightThink" :autosize="{ minRows: 2, maxRows: 9}"></el-input>
                         </el-form-item>
                     </el-form>
                 </div>
@@ -121,6 +186,7 @@
                                 </el-form-item>
                             </div>
                         </template>
+
                         <div class="addSkill" @click="addSkill" v-if="isAddSkill">
                             <i class="el-icon-circle-plus-outline"></i>
                             <span style="margin-left: 6px">添加技能</span>
@@ -130,6 +196,8 @@
                             <i class="el-icon-remove-outline"></i>
                             <span style="margin-left: 6px">删除技能</span>
                         </div>
+
+
 
                     </el-form>
                 </div>
@@ -192,8 +260,30 @@
                 couponError: false,
                 describe: '',              //英雄描述
                 describeError: false,
+                heroSkill: [],
+                heroSkillList: [],
                 score: null,
                 scoreColor: ['#E6A23C','#67C23A', '#00C191'],
+                useSkill: '',
+                fightSkill: '',
+                fightThink: '',
+
+                bestPartner: [],
+                bestPartnerNum: 0,
+                bestPartnerMiddle: [],
+                bestPartnerDescribe: [],
+
+                restrainBy: [],
+                restrainByNum: 0,
+                restrainByMiddle: [],
+                restrainByDescribe: [],
+
+                restrainTo: [],
+                restrainToNum: 0,
+                restrainToMiddle: [],
+                restrainToDescribe: [],
+
+                heroList: [],
 
                 skillList: [
                     {
@@ -236,6 +326,8 @@
         async created() {
             this.getWayList();
             this.getClassify();
+            this.getHeroList();
+            this.getHeroSkill();
             if(this.$route.params.id){
                 let res = await this.$http.get(`rest/heroInfo/heroId/${this.$route.params.id}`)
                 let item = res.data;
@@ -334,6 +426,20 @@
                 })
             },
 
+            //获取召唤师技能
+            getHeroSkill(){
+                this.$http.get('rest/heroSkill').then((res)=>{
+                    this.heroSkillList = res.data;
+                })
+            },
+
+            //获取英雄列表
+            getHeroList(){
+                this.$http.get('rest/heroInfo').then((res) => {
+                    this.heroList = res.data;
+                })
+            },
+
             //新增获取方式
             getWayNew(){
                 this.popupShow = true;
@@ -357,7 +463,6 @@
 
             //上传照片
             afterUpload(res){
-                window.console.log(res);
                 this.pic = res.url;
             },
 
@@ -451,6 +556,74 @@
                     this.couponWayShow = true;
                 }else{
                     this.couponWayShow = false;
+                }
+            },
+
+            partnerChoose(choose){
+                if(choose.length > this.bestPartnerNum){
+                    this.bestPartnerNum ++;
+                    for(let i = 0; i < this.bestPartnerNum; i++){
+                        this.bestPartnerMiddle[i] = {
+                            name: this.bestPartner[i],
+                            index: i,
+                        }
+                    }
+                }
+            },
+
+            partnerRemove(choose){
+                this.bestPartnerNum --;
+                for(let i = 0; i < this.bestPartnerMiddle.length; i++){
+                    if(choose === this.bestPartnerMiddle[i].name){
+                        this.bestPartnerDescribe.splice(i,1);
+                        this.bestPartnerMiddle.splice(i,1);
+                    }
+                }
+            },
+
+            //被谁克制下拉框
+            restrainByChoose(choose){
+                if(choose.length > this.restrainByNum){
+                    this.restrainByNum ++;
+                    for(let i = 0; i < this.restrainByNum; i++){
+                        this.restrainByMiddle[i] = {
+                            name: this.restrainBy[i],
+                            index: i,
+                        }
+                    }
+                }
+            },
+
+            restrainByRemove(choose){
+                this.restrainByNum --;
+                for(let i = 0; i < this.restrainBy.length; i++){
+                    if(choose === this.restrainByMiddle[i].name){
+                        this.restrainByDescribe.splice(i,1);
+                        this.restrainByMiddle.splice(i,1);
+                    }
+                }
+            },
+
+            //克制谁下拉框
+            restrainToChoose(choose){
+                if(choose.length > this.restrainToNum){
+                    this.restrainToNum ++;
+                    for(let i = 0; i < this.restrainToNum; i++){
+                        this.restrainToMiddle[i] = {
+                            name: this.restrainTo[i],
+                            index: i,
+                        }
+                    }
+                }
+            },
+
+            restrainToRemove(choose){
+                this.restrainToNum --;
+                for(let i = 0; i < this.restrainTo.length; i++){
+                    if(choose === this.restrainToMiddle[i].name){
+                        this.restrainToDescribe.splice(i,1);
+                        this.restrainToMiddle.splice(i,1);
+                    }
                 }
             },
 

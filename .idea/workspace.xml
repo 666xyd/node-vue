@@ -2,20 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d55bdcc2-34d5-4ae5-aaef-cc2de416f6f2" name="默认更改列表" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/equip/equip.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/hero/hero.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/http.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/index/index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/routes/wap/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/app.public.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app.public.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/components/Header.vue" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Header.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main.vue" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/router/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pc/src/hero/heroNew.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pc/src/hero/heroNew.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +34,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src" />
+    <property name="last_opened_file_path" value="$USER_HOME$/workspace/dxsf" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -100,6 +88,7 @@
       <workItem from="1613982761246" duration="9208000" />
       <workItem from="1614055198178" duration="3568000" />
       <workItem from="1614060052752" duration="14648000" />
+      <workItem from="1614143100464" duration="15111000" />
     </task>
     <servers />
   </component>
@@ -114,10 +103,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1613130655342" />
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1614066869008">
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1614145024913">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1614066869008" />
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1614145024913" />
     <state x="750" y="221" key="RollbackChangesDialog" timestamp="1613740727138">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -142,9 +131,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="603" y="242" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1613741333735" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1614059751058">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1614150801540">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1614059751058" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1614150801540" />
   </component>
 </project>
