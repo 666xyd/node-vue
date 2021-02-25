@@ -2,8 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d55bdcc2-34d5-4ae5-aaef-cc2de416f6f2" name="默认更改列表" comment="">
+      <change afterPath="$PROJECT_DIR$/server/uploads/0863486afcaef455cb7dc488cbe30ae8" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/0bc25a5720b3785b6aa9fd274d30b322" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/60e96c11b5b4883725cec0c9421fd699" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/63087aa6cb0e230cfbe81131bc3a4eb4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/9395e8e22fde567449ba1dd20078dd85" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/95d9167ad4b12ba57d77a3f3059b5772" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/9c1a8da50f57f990f04a5098c5673d97" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/a9c347c6109da45c8b4255570169bbce" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/fb8a1dcfc52bef8b0d23bfcf94657558" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pc/src/hero/heroNew.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pc/src/hero/heroNew.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/models/HeroInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/HeroInfo.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,6 +99,7 @@
       <workItem from="1614055198178" duration="3568000" />
       <workItem from="1614060052752" duration="14648000" />
       <workItem from="1614143100464" duration="15111000" />
+      <workItem from="1614253450475" duration="4805000" />
     </task>
     <servers />
   </component>

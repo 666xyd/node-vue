@@ -10,12 +10,8 @@
                     <el-form label-width="100px" style="padding-left: 70px">
                         <!-- 英雄图片 -->
                         <el-form-item label="英雄图片：" class="required">
-                            <el-upload
-                                class="avatar-uploader"
-                                :action="$http.defaults.baseURL + '/upload'"
-                                :headers="getAuthHeaders()"
-                                :show-file-list="false"
-                                :on-success="afterUpload">
+                            <el-upload class="avatar-uploader" :action="$http.defaults.baseURL + '/upload'"
+                                :headers="getAuthHeaders()" :show-file-list="false" :on-success="afterUpload">
                                 <img v-if="pic" :src="pic" class="avatar">
                                 <i v-else class="el-icon-plus avatar-uploader-icon"></i>
                             </el-upload>
@@ -145,6 +141,15 @@
                         <el-form-item label="团战思路：">
                             <el-input type="textarea" v-model="fightThink" :autosize="{ minRows: 2, maxRows: 9}"></el-input>
                         </el-form-item>
+
+                        <!-- 一图识英雄 -->
+                        <el-form-item label="一图识英雄：">
+                            <el-upload class="avatar-uploader" :action="$http.defaults.baseURL + '/upload'"
+                                       :headers="getAuthHeaders()" :show-file-list="false" :on-success="res => this.onePic = res.url">
+                                <img v-if="onePic" :src="onePic" class="avatar">
+                                <i v-else class="el-icon-plus avatar-uploader-icon"></i>
+                            </el-upload>
+                        </el-form-item>
                     </el-form>
                 </div>
 
@@ -197,9 +202,24 @@
                             <span style="margin-left: 6px">删除技能</span>
                         </div>
 
-
-
+                        <el-form-item label="主升技能：">
+                            <el-select v-model="mainAdd" placeholder="请选择主升技能">
+                                <el-option v-for="(item, index) in skillList" :key="index" :label="item.name" :value="item.title">
+                                    <span style="float: left">{{item.title}}</span>
+                                    <span style="float: right">{{item.name}}</span>
+                                </el-option>
+                            </el-select>
+                        </el-form-item>
+                        <el-form-item label="附升技能：">
+                            <el-select v-model="secondAdd" placeholder="请选择副升技能">
+                                <el-option v-for="(item, index) in skillList" :key="index" :label="item.name" :value="item.title">
+                                    <span style="float: left">{{item.title}}</span>
+                                    <span style="float: right">{{item.name}}</span>
+                                </el-option>
+                            </el-select>
+                        </el-form-item>
                     </el-form>
+
                 </div>
             </div>
 
@@ -237,6 +257,7 @@
             return {
                 pic: '',
                 picError: false,
+                onePic: '',    //一图识英雄
                 date: '',           //上架时间
                 dateError: false,
                 way: [],                //获取方式
@@ -321,6 +342,9 @@
                 ],             //技能组合
 
                 isAddSkill: true,
+
+                mainAdd: '',
+                secondAdd: '',
             }
         },
         async created() {
@@ -342,6 +366,19 @@
                 this.score = item.score;
                 this.describe = item.describe;
                 this.skillList = item.skillList;
+                this.heroSkill = item.heroSkill;
+                this.bestPartner = item.bestPartner;
+                this.bestPartnerDescribe = item.bestPartnerDescribe;
+                this.restrainBy = item.restrainBy;
+                this.restrainByDescribe = item.restrainByDescribe;
+                this.restrainTo = item.restrainTo;
+                this.restrainToDescribe = item.restrainToDescribe;
+                this.useSkill = item.useSkill;
+                this.fightSkill = item.fightSkill;
+                this.fightThink = item.fightThink;
+                this.mainAdd = item.mainAdd;
+                this.secondAdd = item.secondAdd;
+                this.onePic = item.onePic;
                 this.wayChoose(this.way);
             }
             if(this.skillList.length === 5){
@@ -364,6 +401,19 @@
                     this.score = item.score;
                     this.describe = item.describe;
                     this.skillList = item.skillList;
+                    this.heroSkill = item.heroSkill;
+                    this.bestPartner = item.bestPartner;
+                    this.bestPartnerDescribe = item.bestPartnerDescribe;
+                    this.restrainBy = item.restrainBy;
+                    this.restrainByDescribe = item.restrainByDescribe;
+                    this.restrainTo = item.restrainTo;
+                    this.restrainToDescribe = item.restrainToDescribe;
+                    this.useSkill = item.useSkill;
+                    this.fightSkill = item.fightSkill;
+                    this.fightThink = item.fightThink;
+                    this.mainAdd = item.mainAdd;
+                    this.secondAdd = item.secondAdd;
+                    this.onePic = item.onePic;
                     this.wayChoose(this.way);
                 }else{
                     this.pic = '';
@@ -376,6 +426,19 @@
                     this.money = '';
                     this.describe = '';
                     this.score = null;
+                    this.heroSkill = [];
+                    this.bestPartner = [];
+                    this.bestPartnerDescribe = [];
+                    this.restrainBy = [];
+                    this.restrainByDescribe = [];
+                    this.restrainTo = [];
+                    this.restrainToDescribe = [];
+                    this.useSkill = '';
+                    this.fightSkill = '';
+                    this.fightThink = ''
+                    this.mainAdd = '';
+                    this.secondAdd = '';
+                    this.onePic = '';
                     this.wayChoose(this.way);
                     this.skillList = [
                         {
@@ -744,6 +807,19 @@
                     describe: this.describe,
                     skillList: this.skillList,
                     score: this.score,
+                    heroSkill: this.heroSkill,
+                    bestPartner: this.bestPartner,
+                    bestPartnerDescribe: this.bestPartnerDescribe,
+                    restrainBy: this.restrainBy,
+                    restrainByDescribe: this.restrainByDescribe,
+                    restrainTo: this.restrainTo,
+                    restrainToDescribe: this.restrainToDescribe,
+                    useSkill: this.useSkill,
+                    fightSkill: this.fightSkill,
+                    fightThink: this.fightThink,
+                    mainAdd: this.mainAdd,
+                    secondAdd: this.secondAdd,
+                    onePic: this.onePic,
                 }
 
                 let res = null;
@@ -827,13 +903,11 @@
         font-size: 28px;
         color: #8c939d;
         width: 98px;
-        height: 98px;
         line-height: 98px;
         text-align: center;
     }
     .avatar {
         width: 98px;
-        height: 98px;
         display: block;
     }
 
@@ -861,6 +935,7 @@
    }
 
    .addSkill{
+       margin-bottom: 12px;
        display: flex;
        align-items: center;
        justify-content: flex-end;

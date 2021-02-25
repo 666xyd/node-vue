@@ -12,6 +12,19 @@ const schema = new mongoose.Schema({
     skillList: {type: Array},
     describe: {type: String},
     score: {type: Number},
+    heroSkill: {type: Array},
+    bestPartner: {type: Array},
+    bestPartnerDescribe: {type: Array},
+    restrainBy: {type: Array},
+    restrainByDescribe: {type: Array},
+    restrainTo: {type: Array},
+    restrainToDescribe: {type: Array},
+    useSkill: {type: String},
+    fightSkill: {type: String},
+    fightThink: {type: String},
+    mainAdd: {type: String},
+    secondAdd: {type: String},
+    onePic: {type: String},
 })
 
 module.exports = mongoose.model('HeroInfo', schema)
