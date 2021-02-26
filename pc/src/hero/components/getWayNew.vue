@@ -8,7 +8,7 @@
                 </el-form-item>
 
                 <el-form-item label="描述：" class="required">
-                    <el-input placeholder="请输入描述" v-model="describe" style="width: 348px" type="textarea" autosize></el-input>
+                    <el-input placeholder="请输入描述" v-model="describe" style="width: 348px" type="textarea" :autosize="{minRows:2, maxRows: 9}"></el-input>
                     <alarm-text text="获取方式描述不可以为空" :empty="describeError"></alarm-text>
                 </el-form-item>
 

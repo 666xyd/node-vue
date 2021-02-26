@@ -2,18 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d55bdcc2-34d5-4ae5-aaef-cc2de416f6f2" name="默认更改列表" comment="">
-      <change afterPath="$PROJECT_DIR$/server/uploads/0863486afcaef455cb7dc488cbe30ae8" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/uploads/0bc25a5720b3785b6aa9fd274d30b322" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/uploads/60e96c11b5b4883725cec0c9421fd699" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/uploads/63087aa6cb0e230cfbe81131bc3a4eb4" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/uploads/9395e8e22fde567449ba1dd20078dd85" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/uploads/95d9167ad4b12ba57d77a3f3059b5772" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/uploads/9c1a8da50f57f990f04a5098c5673d97" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/uploads/a9c347c6109da45c8b4255570169bbce" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/uploads/fb8a1dcfc52bef8b0d23bfcf94657558" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/hero/heroDetail.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/04232c48ec27f12ed646dd5e5bd1f426" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/18f1182a68b51418a3fafabd5c4767e5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/1f9482e8efa0d05b2c5d1a3af953356d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/5c17972bda21e2d60f7bbe1c198cd4d7" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/7f0624250176e930f267c0cd08d97f9d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/8e906b9765eb8284fea05b1d5c46333b" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/b47a444cd811199a04930f6c731207c9" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/e68410ac72b92a0056617ff05784b78d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/faba7dc389baa038af71014dcee64f5f" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/app.public.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app.public.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/hero/hero.vue" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/hero/hero.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pc/src/hero/components/getWayNew.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pc/src/hero/components/getWayNew.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pc/src/hero/heroNew.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pc/src/hero/heroNew.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pc/src/hero/skinNew.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pc/src/hero/skinNew.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/models/HeroInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/HeroInfo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/routes/wap/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/wap/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,8 +31,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
-        <option value="Vue Single File Component" />
         <option value="JavaScript File" />
+        <option value="Vue Single File Component" />
       </list>
     </option>
   </component>
@@ -99,7 +106,8 @@
       <workItem from="1614055198178" duration="3568000" />
       <workItem from="1614060052752" duration="14648000" />
       <workItem from="1614143100464" duration="15111000" />
-      <workItem from="1614253450475" duration="4805000" />
+      <workItem from="1614253450475" duration="4807000" />
+      <workItem from="1614333800320" duration="8602000" />
     </task>
     <servers />
   </component>

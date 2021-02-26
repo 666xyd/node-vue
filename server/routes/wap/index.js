@@ -22,6 +22,18 @@ module.exports = app => {
         res.send(list);
     })
 
+    //根据英雄id返回信息
+    router.get('/heroId/:id', async (req, res) =>{
+        const item = await req.Model.findById(req.params.id);
+        res.send(item);
+    })
+
+    //根据英雄姓名返回该英雄所有的皮肤
+    router.get('/findByHeroName/:name', async  (req, res) =>{
+        const list = await req.Model.find({"name": req.params.name});
+        res.send(list);
+    })
+
     app.use('/wap/api/rest/:resource', async (req, res, next) => {
         const modelName = require('inflection').classify(req.params.resource);
         req.Model = require(`../../models/${modelName}`)

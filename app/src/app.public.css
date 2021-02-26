@@ -161,3 +161,8 @@ li{
     -webkit-transform: translateX(-100%);
 }
 
+/*组件轮播图*/
+.van-swipe-item img{
+    width: 100%;
+}
+

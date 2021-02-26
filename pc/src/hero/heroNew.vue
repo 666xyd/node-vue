@@ -67,15 +67,31 @@
                             <span class="add" @click="classifyNew">+新增英雄分类</span>
                         </el-form-item>
 
-                        <el-form-item label="英雄难度：" class="al-center score">
-                            <el-rate v-model="score" :colors="scoreColor"></el-rate>
-                        </el-form-item>
-
                         <!-- 召唤师技能   -->
                         <el-form-item label="召唤师技能：">
                             <el-select placeholder="请选择召唤师技能" v-model="heroSkill" multiple>
                                 <el-option v-for="item in heroSkillList" :key="item._id" :value="item.name + ' ' + item.pic" :label="item.name"></el-option>
                             </el-select>
+                        </el-form-item>
+
+                        <!--  生存能力  -->
+                        <el-form-item label="生存能力：" class="power">
+                            <el-input-number v-model="livePower" :min="1" :max="10" ></el-input-number>
+                        </el-form-item>
+
+                        <!--  攻击伤害  -->
+                        <el-form-item label="攻击伤害：" class="power">
+                            <el-input-number v-model="attackPower" :min="1" :max="10" ></el-input-number>
+                        </el-form-item>
+
+                        <!--  技能效果  -->
+                        <el-form-item label="技能效果：" class="power">
+                            <el-input-number v-model="skillPower" :min="1" :max="10" ></el-input-number>
+                        </el-form-item>
+
+                        <!--  上手难度  -->
+                        <el-form-item label="上手难度：" class="power">
+                            <el-input-number v-model="scorePower" :min="1" :max="10" ></el-input-number>
                         </el-form-item>
 
                         <!--  最佳搭档 -->
@@ -120,12 +136,6 @@
                                 <el-input v-model="restrainToDescribe[index]" type="textarea" :autosize="{ minRows: 2, maxRows: 9}"></el-input>
                             </el-form-item>
                         </template>
-
-                        <!-- 英雄描述 -->
-                        <el-form-item label="英雄描述：" class="required">
-                            <el-input type="textarea" v-model="describe" :autosize="{ minRows: 2, maxRows: 9}"></el-input>
-                            <alarm-text text="请输入英雄描述" :empty="describeError"></alarm-text>
-                        </el-form-item>
 
                         <!--  使用技巧 -->
                         <el-form-item label="使用技巧：">
@@ -279,12 +289,14 @@
                 chipError: false,
                 coupon: null,              //点券数量
                 couponError: false,
-                describe: '',              //英雄描述
-                describeError: false,
+
+                livePower: null,
+                attackPower: null,
+                skillPower: null,
+                scorePower: null,
+
                 heroSkill: [],
                 heroSkillList: [],
-                score: null,
-                scoreColor: ['#E6A23C','#67C23A', '#00C191'],
                 useSkill: '',
                 fightSkill: '',
                 fightThink: '',
@@ -363,8 +375,10 @@
                 this.coupon = item.coupon;
                 this.date = item.date;
                 this.money = item.money;
-                this.score = item.score;
-                this.describe = item.describe;
+                this.livePower = item.livePower;
+                this.attackPower = item.attackPower;
+                this.skillPower  = item.skillPower;
+                this.scorePower = item.scorePower;
                 this.skillList = item.skillList;
                 this.heroSkill = item.heroSkill;
                 this.bestPartner = item.bestPartner;
@@ -398,8 +412,10 @@
                     this.coupon = item.coupon;
                     this.date = item.date;
                     this.money = item.money;
-                    this.score = item.score;
-                    this.describe = item.describe;
+                    this.livePower = item.livePower;
+                    this.attackPower = item.attackPower;
+                    this.skillPower  = item.skillPower;
+                    this.scorePower = item.scorePower;
                     this.skillList = item.skillList;
                     this.heroSkill = item.heroSkill;
                     this.bestPartner = item.bestPartner;
@@ -424,8 +440,10 @@
                     this.coupon = '';
                     this.date = '';
                     this.money = '';
-                    this.describe = '';
-                    this.score = null;
+                    this.livePower = '';
+                    this.attackPower = '';
+                    this.skillPower  = '';
+                    this.scorePower = '';
                     this.heroSkill = [];
                     this.bestPartner = [];
                     this.bestPartnerDescribe = [];
@@ -788,13 +806,6 @@
                     this.classifyError = false
                 }
 
-                if(this.describe === ''){
-                    this.describeError = true;
-                    return false;
-                }else{
-                    this.describeError = false;
-                }
-
                 let params = {
                     pic: this.pic,
                     name: this.name,
@@ -804,9 +815,11 @@
                     coupon: this.coupon,
                     date: this.date,
                     classify: this.classify,
-                    describe: this.describe,
+                    livePower: this.livePower,
+                    attackPower: this.attackPower,
+                    skillPower: this.skillPower,
+                    scorePower: this.scorePower,
                     skillList: this.skillList,
-                    score: this.score,
                     heroSkill: this.heroSkill,
                     bestPartner: this.bestPartner,
                     bestPartnerDescribe: this.bestPartnerDescribe,
@@ -951,7 +964,9 @@
        color: #999999;
    }
 
-    .score >>> .el-form-item__content{
-        margin-left: 0!important;
+    .power >>> .el-input__inner{
+        width: 100%!important;
+        height: 40px!important;
+        line-height: 40px!important;
     }
 </style>

@@ -3,7 +3,8 @@
         <van-tabs v-model="active" animated @click="clickTab">
             <van-tab v-for="(item, index) in classList" :title="item.name" :key="index">
                 <van-grid square :column-num="4" :icon-size="40">
-                    <van-grid-item v-for="(item, index) in heroList" :key="index" :icon="item.pic[0]" :text="item.name" />
+                    <van-grid-item v-for="(item, index) in heroList" :key="index" :icon="item.pic[0]" :text="item.name"
+                                   @click="clickHero(item)"/>
                 </van-grid>
             </van-tab>
         </van-tabs>
@@ -29,7 +30,6 @@ export default {
         getHeroList(){
             this.$http.get('rest/heroInfo').then((res)=>{
                 this.heroList = res.data;
-                window.console.log(this.heroList);
             })
         },
 
@@ -43,7 +43,6 @@ export default {
         },
 
         clickTab(title,name){
-            window.console.log(title,name);
             if(title === 0){
                 //全部
                 this.getHeroList();
@@ -53,6 +52,11 @@ export default {
                     this.heroList = res.data;
                 })
             }
+        },
+
+        clickHero(item){
+            window.console.log('点击', item);
+            this.$router.push({name: 'heroDetail', params: {id: item._id}});
         }
     }
 }

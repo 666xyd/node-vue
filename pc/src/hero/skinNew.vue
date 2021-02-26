@@ -385,7 +385,7 @@
 
     .skin-new >>> .el-textarea__inner{
         width: 424px;
-        min-height: 204px!important;
+        /*min-height: 204px!important;*/
     }
 
     .add{
