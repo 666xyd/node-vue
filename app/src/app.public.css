@@ -28,6 +28,18 @@ li{
     background-color: #db9e3f;
 }
 
+.bg-blue{
+    background-color: #409eff;
+}
+
+.bg-red{
+    background-color: #DC5C53;
+}
+
+.bg-green{
+    background-color: #00c191;
+}
+
 .fc-white{
     color: #fff;
 }
@@ -165,4 +177,6 @@ li{
 .van-swipe-item img{
     width: 100%;
 }
+
+
 

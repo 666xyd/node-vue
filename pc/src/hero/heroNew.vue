@@ -70,7 +70,7 @@
                         <!-- 召唤师技能   -->
                         <el-form-item label="召唤师技能：">
                             <el-select placeholder="请选择召唤师技能" v-model="heroSkill" multiple>
-                                <el-option v-for="item in heroSkillList" :key="item._id" :value="item.name + ' ' + item.pic" :label="item.name"></el-option>
+                                <el-option v-for="item in heroSkillList" :key="item._id" :value="item.name + ' ' + item.icon" :label="item.name"></el-option>
                             </el-select>
                         </el-form-item>
 
@@ -214,7 +214,7 @@
 
                         <el-form-item label="主升技能：">
                             <el-select v-model="mainAdd" placeholder="请选择主升技能">
-                                <el-option v-for="(item, index) in skillList" :key="index" :label="item.name" :value="item.title">
+                                <el-option v-for="(item, index) in skillList" :key="index" :label="item.name" :value="item.name">
                                     <span style="float: left">{{item.title}}</span>
                                     <span style="float: right">{{item.name}}</span>
                                 </el-option>
@@ -222,7 +222,7 @@
                         </el-form-item>
                         <el-form-item label="附升技能：">
                             <el-select v-model="secondAdd" placeholder="请选择副升技能">
-                                <el-option v-for="(item, index) in skillList" :key="index" :label="item.name" :value="item.title">
+                                <el-option v-for="(item, index) in skillList" :key="index" :label="item.name" :value="item.name">
                                     <span style="float: left">{{item.title}}</span>
                                     <span style="float: right">{{item.name}}</span>
                                 </el-option>

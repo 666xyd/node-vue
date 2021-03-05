@@ -55,7 +55,6 @@ export default {
         },
 
         clickHero(item){
-            window.console.log('点击', item);
             this.$router.push({name: 'heroDetail', params: {id: item._id}});
         }
     }
@@ -63,8 +62,8 @@ export default {
 </script>
 
 <style scoped>
-    .hero-list >>> .van-tabs__line{
-        background-color: #db9e3f;
-    }
 
+.hero-list >>> .van-tabs__line{
+    background-color: #db9e3f;
+}
 </style>

@@ -34,6 +34,12 @@ module.exports = app => {
         res.send(list);
     })
 
+    //根据文章分类返回文章列表
+    router.get('/articleClassify/:classify', async (req, res) => {
+        const list = await req.Model.find({"name": {$regex: req.params.classify}});
+        res.send(list);
+    })
+
     app.use('/wap/api/rest/:resource', async (req, res, next) => {
         const modelName = require('inflection').classify(req.params.resource);
         req.Model = require(`../../models/${modelName}`)

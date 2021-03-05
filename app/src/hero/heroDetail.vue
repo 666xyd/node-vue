@@ -9,30 +9,50 @@
                 </van-swipe-item>
             </van-swipe>
         </div>
+
+        <!-- 英雄 -->
+        <div class="hero-main">
+            <van-tabs v-model="clickTab" animated title-active-color="#db9e3f">
+                <van-tab title="英雄初识">
+                    <hero-main :hero-info="heroInfo" :skin-list="skinList" @clickOnePic="clickOnePic"></hero-main>
+                </van-tab>
+                <van-tab title="进阶攻略"></van-tab>
+            </van-tabs>
+            <transition name="van-slide-down">
+                <div class="one-pic" v-if="onePicShow" @click="onePicShow = false;">
+                    <img :src="heroInfo.onePic" >
+                </div>
+            </transition>
+        </div>
+
+
     </div>
 </template>
 
 <script>
+    import heroMain from "./heroMain";
     export default {
         name: "heroDetail",
         data(){
             return{
                 heroInfo: {},
                 skinList: [],
+                clickTab: 0,
+                onePicShow: false,
             }
         },
         async created() {
             await this.getHeroInfo();
         },
         components: {
-
+            heroMain,
         },
         methods: {
             //获取英雄信息
             getHeroInfo(){
                 this.$http.get(`rest/heroInfo/heroId/${this.$route.params.id}`).then((res) => {
                     this.heroInfo = res.data;
-                    this.getSkinList()
+                    this.getSkinList();
                 })
             },
 
@@ -49,6 +69,11 @@
                     }
                     this.skinList.unshift(this.skinList.splice(index,1)[0])
                 })
+            },
+
+            //点击一图识英雄
+            clickOnePic(){
+                this.onePicShow = true;
             }
         }
 
@@ -67,6 +92,29 @@
         font-size: 1.538rem;
         left: 2rem;
         bottom: 3rem;
+    }
 
+    .hero-main >>> .van-tabs__line{
+        background-color: #db9e3f;
+    }
+
+    .hero-main{
+        height: fit-content;
+        overflow-y: scroll;
+    }
+
+    .one-pic{
+        width: 100vw;
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        overflow-y: scroll;
+        z-index: 100;
+        margin-bottom: 0;
+    }
+
+    .one-pic img{
+        width: 100%;
     }
 </style>
