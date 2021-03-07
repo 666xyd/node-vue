@@ -2,28 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d55bdcc2-34d5-4ae5-aaef-cc2de416f6f2" name="默认更改列表" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/article/articleDetail.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/article/articleList.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/article/articleVan.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/hero/components/skillDetail.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/hero/heroSkill.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/vue.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/uploads/03dfa8a7e2cbfda0701723880e48db72" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/uploads/0a41d5f2fbe43794a5a60f3a45ae65aa" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/uploads/1001932e23f07e1c77e7768d3bacb268" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/uploads/18b03c1df46ce152866c0b4bfdbeeb46" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/uploads/33c5e3075ca156b8e414e3139c70d51d" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/uploads/6eac69207e6cc3d2111062ddccd581e8" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/uploads/7892f76ecb0179585ea0925f33ad8588" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/uploads/a4218bdd18a03817e6e98c01d2e2011c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/uploads/a6b9f24e19406247c74645c2d3dbbf9f" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/uploads/d7ca56141b6d4c81a9b05ac01382a8c1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/strategy/strategyDetail.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/strategy/strategyList.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/strategy/strategyPart.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/08b47d0f8695827be003baec3cde6170" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/443a69057cb08b2a2e777fdad15e4a76" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/503dca2abbe68e482c7167c4e2aff4a2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/51658eadc3c3fe16dfa0df69e31d5fa8" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/8d9d3fcec757c3ff60c4ece927cbff54" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/a30b4142d69470352257614e81a4ba93" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/acd5c36c7f5468e8e10bb46eeeb7902c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/cfccfa712e5d170e441601f655f6914a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/dd8938c1bef3704d02bf1dd5ebf9a2b6" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/f0832c362f447f8c28e17f9ac5e5406b" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/app.public.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app.public.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/hero/hero.vue" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/hero/hero.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/article/articleList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/article/articleList.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/components/Header.vue" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Header.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/index/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/index/index.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/router/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pc/src/article/articleList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pc/src/article/articleList.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/vue.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/vue.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/routes/wap/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/wap/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -116,7 +113,7 @@
       <workItem from="1614561247604" duration="17000" />
       <workItem from="1614907560637" duration="24257000" />
       <workItem from="1615007494530" duration="14014000" />
-      <workItem from="1615080814141" duration="7533000" />
+      <workItem from="1615080814141" duration="16125000" />
     </task>
     <servers />
   </component>

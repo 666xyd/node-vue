@@ -27,13 +27,23 @@
             <hero-skill></hero-skill>
         </div>
 
+        <!-- 攻略中心 -->
+        <div class="indexCard">
+            <div class="card-title fs-xl flex flex-between al-center fc-primary fw-700">
+                <div class="flex al-center"><van-icon name="description" size="18"/><span class="title-text">攻略中心</span></div>
+                <van-icon name="ellipsis" size="18" @click="$router.push({name: 'strategyList'})"/>
+            </div>
+            <!-- 攻略中心 -->
+            <strategy-part></strategy-part>
+        </div>
+
     </div>
 </template>
 
 <script>
     import articleVan from "../article/articleVan";
     import heroSkill from "../hero/heroSkill";
-    import Hero from "../hero/hero";
+    import strategyPart from "../strategy/strategyPart";
     export default {
         name: "index",
         data(){
@@ -44,6 +54,7 @@
         components: {
             articleVan,
             heroSkill,
+            strategyPart,
         },
         async created() {
             await this.getArticleList();

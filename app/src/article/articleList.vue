@@ -27,6 +27,9 @@
 </template>
 
 <script>
+    import { Toast } from 'vant';
+    import Vue from 'vue';
+    Vue.use(Toast);
     export default {
         name: "articleList",
         components: {
@@ -135,6 +138,9 @@
                         this.list.push(this.articleList[this.list.length]);
                     }
                     this.loading = false;
+                    if(this.list.length > 10){
+                        Toast.success('刷新成功');
+                    }
 
                     if (this.list.length >= this.articleListLength) {
                         this.finished = true;

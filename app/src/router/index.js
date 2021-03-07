@@ -9,6 +9,10 @@ import index from '../index/index';
 import articleDetail from "../article/articleDetail";
 import articleList from "../article/articleList";
 
+//攻略
+import strategyList from "../strategy/strategyList";
+import strategyDetail from "../strategy/strategyDetail";
+
 //英雄信息
 import hero from '../hero/hero';
 import heroDetail from "../hero/heroDetail";
@@ -26,10 +30,13 @@ const routes = [
             //首页
             {path: 'index', name: 'index', component: index, meta: {index: 1.0}},
 
-
+            //文章
             {path: 'article/list', name: 'articleList', component: articleList, meta: {index: 40}},             //文章列表
             {path: 'article/detail/:id', name: 'articleDetail', component: articleDetail, meta: {index: 400}},         //文章详情
 
+            //攻略
+            {path: 'strategy/list', name: 'strategyList', component: strategyList, meta: {index: 50}},            //攻略列表
+            {path: 'strategy/detail/:id', name: 'strategyDetail', component: strategyDetail, meta: {index: 500}},            //攻略详情
 
             //英雄
             {path: 'hero', name: 'hero', component: hero, meta: {index: 2.0}},
