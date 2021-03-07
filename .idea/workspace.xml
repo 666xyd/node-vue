@@ -2,13 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d55bdcc2-34d5-4ae5-aaef-cc2de416f6f2" name="默认更改列表" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/hero/heroMain.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/article/articleDetail.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/article/articleList.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/article/articleVan.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/hero/components/skillDetail.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/hero/heroSkill.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/vue.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/03dfa8a7e2cbfda0701723880e48db72" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/0a41d5f2fbe43794a5a60f3a45ae65aa" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/1001932e23f07e1c77e7768d3bacb268" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/18b03c1df46ce152866c0b4bfdbeeb46" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/33c5e3075ca156b8e414e3139c70d51d" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/6eac69207e6cc3d2111062ddccd581e8" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/7892f76ecb0179585ea0925f33ad8588" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/a4218bdd18a03817e6e98c01d2e2011c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/a6b9f24e19406247c74645c2d3dbbf9f" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/d7ca56141b6d4c81a9b05ac01382a8c1" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/app.public.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app.public.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/hero/hero.vue" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/hero/hero.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/hero/heroDetail.vue" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/hero/heroDetail.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/index/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/index/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pc/src/hero/heroNew.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pc/src/hero/heroNew.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pc/src/article/articleList.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pc/src/article/articleList.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/routes/wap/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/wap/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -54,17 +69,17 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Henry\node-vue\node-vue\app\src\article" />
+      <recent name="C:\Users\Henry\node-vue\node-vue\app\src\article\components" />
+      <recent name="C:\Users\Henry\node-vue\node-vue\app\src\index" />
+      <recent name="C:\Users\Henry\node-vue\node-vue\app\src" />
+      <recent name="C:\Users\Henry\node-vue\node-vue\server\models" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Henry\node-vue\node-vue\app\src" />
       <recent name="C:\Users\Henry\node-vue\node-vue\pc\node_modules\lodash" />
       <recent name="C:\Users\Henry\node-vue\node-vue\pc\src\components" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Henry\node-vue\node-vue\app\src\index" />
-      <recent name="C:\Users\Henry\node-vue\node-vue\app\src" />
-      <recent name="C:\Users\Henry\node-vue\node-vue\server\models" />
-      <recent name="C:\Users\Henry\node-vue\node-vue\server\models\hero" />
-      <recent name="C:\Users\Henry\node-vue\node-vue\pc\src" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -100,6 +115,8 @@
       <workItem from="1614513618003" duration="660000" />
       <workItem from="1614561247604" duration="17000" />
       <workItem from="1614907560637" duration="24257000" />
+      <workItem from="1615007494530" duration="14014000" />
+      <workItem from="1615080814141" duration="7533000" />
     </task>
     <servers />
   </component>
@@ -110,10 +127,10 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1613130655342">
+    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1615033209180">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1613130655342" />
+    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1615033209180" />
     <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1614953283719">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

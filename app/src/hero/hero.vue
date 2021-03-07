@@ -2,7 +2,7 @@
     <div class="bg-white hero-list">
         <van-tabs v-model="active" animated @click="clickTab">
             <van-tab v-for="(item, index) in classList" :title="item.name" :key="index">
-                <van-grid square :column-num="4" :icon-size="40">
+                <van-grid square :column-num="4" :icon-size="48">
                     <van-grid-item v-for="(item, index) in heroList" :key="index" :icon="item.pic[0]" :text="item.name"
                                    @click="clickHero(item)"/>
                 </van-grid>

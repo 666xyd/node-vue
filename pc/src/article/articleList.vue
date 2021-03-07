@@ -24,7 +24,7 @@
 
                 <!-- 右侧文章列表 -->
                 <div class="list" style="width: calc(100% - 180px)">
-                    <el-table :data="articleList" :default-sort = "{prop: 'date', order: 'descending'}">
+                    <el-table :data="articleList.slice((page - 1) * page_count, page * page_count)" :default-sort = "{prop: 'date', order: 'descending'}">
                         <el-table-column label="文章标题">
                             <template slot-scope="scope">
                                 {{scope.row.title}}

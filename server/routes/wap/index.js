@@ -40,6 +40,12 @@ module.exports = app => {
         res.send(list);
     })
 
+    //根据文章id返回该文章信息
+    router.get('/articleId/:id', async (req, res) => {
+        const item = await req.Model.findById(req.params.id);
+        res.send(item);
+    })
+
     app.use('/wap/api/rest/:resource', async (req, res, next) => {
         const modelName = require('inflection').classify(req.params.resource);
         req.Model = require(`../../models/${modelName}`)
