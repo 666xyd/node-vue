@@ -43,7 +43,7 @@ module.exports = {
 
         disableHostCheck: false,
 
-        host: "10.173.18.238",
+        host: "0.0.0.0",
 
         port: 8081,
 

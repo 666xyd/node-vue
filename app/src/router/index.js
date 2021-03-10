@@ -2,6 +2,9 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Wap from '../main.vue';
 
+//登录
+import login from "../login/login";
+
 //首页
 import index from '../index/index';
 
@@ -17,8 +20,8 @@ import strategyDetail from "../strategy/strategyDetail";
 import hero from '../hero/hero';
 import heroDetail from "../hero/heroDetail";
 
-//装备信息
-import equip from '../equip/equip';
+//我的
+import mine from "../mine/mine";
 
 
 Vue.use(VueRouter)
@@ -27,6 +30,9 @@ const routes = [
     {
         path: '/app', component: Wap,
         children: [
+            // 登录
+            {path: 'login', name: 'login', component: login, meta: {index: 0.1}},
+
             //首页
             {path: 'index', name: 'index', component: index, meta: {index: 1.0}},
 
@@ -43,7 +49,7 @@ const routes = [
             {path: 'hero/detail/:id', name: 'heroDetail', component: heroDetail, meta: {index: 20}},    //英雄详情
 
             //装备
-            {path: 'equip', name: 'equip', component: equip, meta: {index: 3}},
+            {path: 'mine', name: 'mine', component: mine, meta: {index: 3.0}},
         ]
     }
 ]
@@ -52,6 +58,13 @@ const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   routes
+})
+
+router.beforeEach((to, from, next) => {
+    if(!localStorage.phone){
+        return next('/app/login');
+    }
+    next();
 })
 
 export default router
