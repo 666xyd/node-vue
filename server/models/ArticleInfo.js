@@ -6,6 +6,9 @@ const schema = new mongoose.Schema({
     title: {type: String},
     date: {type: String},
     content: {type: String},
+    like: {type: Number},
+    agree: {type: Number},
+    share: {type: Number},
 })
 
 module.exports = mongoose.model('ArticleInfo', schema)

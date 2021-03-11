@@ -171,6 +171,9 @@
                     title: this.title,
                     content: this.content,
                     date: utils.getCurrentTime(),
+                    like: 0,
+                    share: 0,
+                    agree: 0,
                 }
 
                 let res;

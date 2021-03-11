@@ -81,6 +81,24 @@ module.exports = app => {
         res.send(item);
     })
 
+    //根据文章id返回该文章的所有评论
+    router.get('/evaluateArticleId/:id', async (req, res) => {
+        const item = await req.Model.find({"id": req.params.id}).sort({"date": -1});
+        res.send(item);
+    })
+
+    //用户新增收藏
+    router.post('/likeUpdate/:phone', async (req, res) => {
+        const item = await req.Model.update({phone: req.params.phone},{$addToSet:{like: req.body}});
+        res.send(item);
+    })
+
+    //用户删除收藏
+    router.post('/likeDelete/:phone', async (req, res) => {
+        const item = await req.Model.update({phone: req.params.phone},{$pull: {like: req.body}});
+        res.send(item);
+    })
+
     //编辑
     router.put('/:id', async (req, res) => {
         const model = await req.Model.findByIdAndUpdate(req.params.id, req.body);
@@ -93,6 +111,15 @@ module.exports = app => {
         res.send({
             success: true,
         })
+    })
+
+    //图片上传
+    const multer = require('multer');
+    const upload = multer({dest: __dirname + '/../../uploads'})
+    app.post('/wap/api/upload', upload.single('file'), async (req, res) => {
+        let file = req.file;
+        file.url = `http://localhost:3000/uploads/${file.filename}`;
+        res.send(file);
     })
 
     app.use('/wap/api/rest/:resource', async (req, res, next) => {

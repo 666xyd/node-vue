@@ -1,14 +1,17 @@
 <template>
-    <div class="article-detail">
+    <div class="article-detail bg-white">
         <div class="article-header">
             <p class="article-title fw-700 fs-xl fc-primary">{{article.title}}</p>
             <p class="article-date">{{article.date}}</p>
         </div>
         <div class="content" v-html="article.content"></div>
+        <!-- 用户操作组件 -->
+        <operation :article="article" @clickItem="clickItem"></operation>
     </div>
 </template>
 
 <script>
+    import operation from "../components/operation";
     export default {
         name: "articleDetail",
         data(){
@@ -17,7 +20,7 @@
             }
         },
         components: {
-
+            operation
         },
         async created() {
             await this.getArticle();
@@ -32,12 +35,17 @@
                     this.$nextTick(()=>{
                         let imgTotal = article.getElementsByTagName('img');
                         for(let i = 0; i < imgTotal.length; i++){
-                            window.console.log(imgTotal[i].parentNode.classList);
                             imgTotal[i].parentNode.classList.add('text-center');
                         }
 
                     })
                 })
+            },
+
+            //点击操作按钮
+            clickItem(){
+                window.console.log('执行了')
+                this.getArticle();
             }
         }
 
@@ -62,6 +70,10 @@
     .article-title{
         margin-bottom: 0.462rem!important;
         line-height: 1.846rem;
+    }
+
+    .content{
+        margin-bottom: 1.846rem;
     }
 
     .content >>> p{

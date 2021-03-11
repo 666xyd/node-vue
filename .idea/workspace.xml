@@ -2,17 +2,60 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d55bdcc2-34d5-4ae5-aaef-cc2de416f6f2" name="默认更改列表" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/login/login.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/mine/mine.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/utils.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/models/AppUserInfo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/components/operation.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/models/Evaluate.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/0abfdca3e6523e6ef48171f72d778353" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/139b6788c97501dd6f6274d2667e56a4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/20de6fdd16fff6ceb1fa5f49e22675ce" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/23dc8af8b6e555b3c43fd221dd1cee40" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/3058b6259d507e61575b59f775a185a0" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/3a11a64d5c1033827a4a4ddba14fda6e" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/3b36a8b7b84147fc153c127c0d584fc9" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/3be99472234c9a5f5a0ed0771c27d66f" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/3fa55069986e0f3e5622e860058ef523" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/426a962c752d3fabf68cc58d85ee6e8f" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/48fd2b370c24198551e77763f9f9b6cc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/5522b16186cbb3d4404f6ee432299d50" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/55ee79b52b6f60707eef2fa45aab2579" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/622281278fd850782f49ea3366817145" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/6534c1d4902a58a0768d9bcb0c4ea4c9" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/677a8127ccf7dc065614d661c2b784e3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/721e70bb716a9ba587ed8eafbd04c9d1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/7645f7f8c3146962cc7866e8f3874693" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/7e94f33b8c67c0357ecb0410994d70c9" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/892c716f548306670663b35a1fe46a2e" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/89a3e324a67b2a61ca3cb4329a393a12" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/90f0a153c2d481196b1dd0e4018899ee" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/9484844b61b0a5c711ffec0636c51f64" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/9748a5c0a41e197718c904073df0b613" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/a59ed3046f9047fa601a0d3da3161f14" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/aa1ced488e968590f98388d559a503f9" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/bea899084870b02d7437ae8dd9bdeda5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/c270b6a3aa67a16663aae16b6a807064" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/c330149e06d4f2ce75240d288a91e45c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/c4df1f1fa744082c109c7ab566012900" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/c6277199a233ddb71da6e340a4a1db6b" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/c628d11df4a147e34b9bf140f5a57dc6" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/ca67ccb7b98ad851c50979ca4702f645" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/cb560d195078491ce0e3219d1b59017e" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/cf66ab777408228005e3ce8df8abcfe4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/d05edf8ce279be4037a74d5a192b0bba" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/d164d524d89100fde009bc1cbb614955" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/d4effb48e09f9e736e6f1a3158236aa4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/e17d58d179b62b5d97a4b232922bc326" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/e5f618bb06f102d1b90658b4550fcfa9" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/f524531770138c6ec2335552e04282ea" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/fae5028f0ce19298e2c39b82b81e4e9b" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/uploads/fe08bab89de88f07e047f7a22e3ebc7f" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/components/Header.vue" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/Header.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/equip/equip.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/router/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/store/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/vue.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/vue.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/app.public.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app.public.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/article/articleDetail.vue" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/article/articleDetail.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/mine/mine.vue" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/mine/mine.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pc/src/article/articleNew.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pc/src/article/articleNew.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/models/AppUserInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/AppUserInfo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/models/ArticleInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/ArticleInfo.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/routes/wap/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/wap/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -24,8 +67,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
-        <option value="JavaScript File" />
         <option value="Vue Single File Component" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -110,7 +153,8 @@
       <workItem from="1615200972065" duration="214000" />
       <workItem from="1615284718523" duration="1119000" />
       <workItem from="1615299094034" duration="790000" />
-      <workItem from="1615341318792" duration="16471000" />
+      <workItem from="1615341318792" duration="31750000" />
+      <workItem from="1615437313837" duration="19689000" />
     </task>
     <servers />
   </component>
@@ -125,10 +169,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1615033209180" />
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1615359556553">
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1615388136871">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1615359556553" />
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1615388136871" />
     <state x="750" y="221" key="RollbackChangesDialog" timestamp="1615360102559">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -161,9 +205,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="603" y="242" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1614948817960" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1614150801540">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1615394197279">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1614150801540" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1615394197279" />
   </component>
 </project>
