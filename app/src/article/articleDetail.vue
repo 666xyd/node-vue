@@ -6,7 +6,7 @@
         </div>
         <div class="content" v-html="article.content"></div>
         <!-- 用户操作组件 -->
-        <operation :article="article" @clickItem="clickItem"></operation>
+        <operation :article="article" ></operation>
     </div>
 </template>
 
@@ -17,19 +17,22 @@
         data(){
             return{
                 article: {},
+                viewNum: null,
             }
         },
         components: {
             operation
         },
         async created() {
-            await this.getArticle();
+            this.getArticle();
         },
         methods: {
             //获得该文站信息
             getArticle(){
                 this.$http.get(`rest/articleInfo/articleId/${this.$route.params.id}`).then((res)=>{
                     this.article = res.data;
+                    this.viewNum = this.article.view;
+                    this.pushRecord();
                     let article = document.getElementsByClassName('article-detail')[0];
                     //对所有图片进行居中处理
                     this.$nextTick(()=>{
@@ -37,16 +40,32 @@
                         for(let i = 0; i < imgTotal.length; i++){
                             imgTotal[i].parentNode.classList.add('text-center');
                         }
-
                     })
+                });
+            },
+
+            //将该文章放进用户浏览记录里面  和  更新文章的浏览数量
+            async pushRecord(){
+                let user = {};
+                await this.getStore('user_info').then((res)=>{
+                    user = res[0];
+                })
+                let params = {
+                    name: this.$route.name,
+                    id: this.$route.params.id
+                }
+                this.$http.post(`rest/appUserInfo/recordUpdate/${user.phone}`, params)
+
+                //更新文章浏览数量
+                this.$http.put(`rest/articleInfo/${this.$route.params.id}`, {view: this.viewNum+1}).then((res)=>{
+                    window.console.log('执行了')
                 })
             },
 
             //点击操作按钮
-            clickItem(){
-                window.console.log('执行了')
-                this.getArticle();
-            }
+            // clickItem(){
+            //     this.getArticle();
+            // }
         }
 
     }

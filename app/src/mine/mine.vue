@@ -36,7 +36,7 @@
                 </div>
 
                 <div class="mine-info">
-                    <div class="info-item" v-for="(item, index) in infoItem" :key="index">
+                    <div class="info-item" v-for="(item, index) in infoItem" :key="index" @click="$router.push({name: `${item.url}`})">
                         <div class="flex al-center"><van-icon :name="item.icon" size="16" color="#db9e3f"/>{{item.name}}</div>
                         <van-icon name="arrow"/>
                     </div>
@@ -62,10 +62,10 @@
                 userName: '',
                 userPhoto: [],
                 infoItem: [
-                    {name: '收藏', icon: 'like-o'},
-                    {name: '点赞', icon: 'good-job-o'},
-                    {name: '浏览记录', icon: 'browsing-history-o'},
-                    {name: '设置', icon: 'setting-o'},
+                    {name: '收藏', icon: 'like-o', url: 'like'},
+                    {name: '点赞', icon: 'good-job-o', url: 'agree'},
+                    {name: '浏览记录', icon: 'browsing-history-o', url: 'record'},
+                    {name: '设置', icon: 'setting-o' , url: 'setting'},
                 ],
                 isEdit: false,
             }

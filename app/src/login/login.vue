@@ -37,6 +37,7 @@
                 code: '',
                 codeText: '发送验证码',
                 codeDisable: false,
+                returnCode: null,
             }
         },
         methods: {
@@ -47,7 +48,15 @@
                     return false;
                 }
                 let time = 60;
-                Toast('验证码发送成功！')
+                this.$http.get('loginCode').then((res)=>{
+                    if(res.data.message === '短信验证码发送成功！'){
+                        this.returnCode = res.data.code;
+                        Toast('验证码发送成功！')
+                    }else{
+                        Toast('验证码发送失败！')
+                    }
+                })
+
                 let timer = setInterval(() => {
                     if (time > 0) {
                         time--;
@@ -65,7 +74,7 @@
 
            async submit(){
                 //判断验证码是否正确
-                if(!utils.is_code(this.code)){
+                if(Number(this.code) !== Number(this.returnCode)){
                     Toast('验证码错误！')
                     return false;
                 }

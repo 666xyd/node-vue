@@ -2,9 +2,67 @@ module.exports = app => {
     const express = require('express');
     const jwt = require('jsonwebtoken');
     const assert = require('http-assert');
+    const md5 = require('blueimp-md5');
+    const moment = require('moment');
+    const Base64 = require('js-base64').Base64;
+    const request = require('request');
     const router = express.Router({
         mergeParams: true
     });
+
+    //生成随机验证码
+    function randomCode(length){
+        let chars = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+        let result = "";
+        for(let i = 0; i < length; i++){
+            let index = Math.ceil(Math.random()*9);
+            result += chars[index];
+        }
+        return result;
+    };
+
+    //发送验证码
+    function sendCode(phone, code, callback){
+        const ACCOUNT_SID = '8a216da878005a8001782603906f0ecd';
+        const AUTH_TOKEN = 'c92652c52e9e45a4baf3a12781f72e75';
+        const Rest_URL = 'https://app.cloopen.com:8883';
+        const AppID = '8a216da878005a8001782603916f0ed4';
+
+        //准备请求url
+        let sigParameter = '';
+        let time = moment().format('YYYYMMDDHHmmss');
+        sigParameter = md5(ACCOUNT_SID + AUTH_TOKEN + time);
+        let url = Rest_URL+'/2013-12-26/Accounts/'+ACCOUNT_SID+'/SMS/TemplateSMS?sig='+sigParameter;
+
+        //准备请求体
+        let body = {
+            to : phone,
+            appId: AppID,
+            templateId: '1',
+            "datas": [code, "1"],
+        }
+
+        //准备请求头
+        let authorization = ACCOUNT_SID + ':' + time;
+        authorization = Base64.encode(authorization);
+        let headers = {
+            'Accept' :'application/json',
+            'Content-Type' :'application/json;charset=utf-8',
+            'Content-Length': JSON.stringify(body).length+'',
+            'Authorization' : authorization
+        }
+
+        //发送请求
+        request({
+            method : 'POST',
+            url : url,
+            headers : headers,
+            body : body,
+            json : true
+        }, function (error, response, body) {
+            callback(body.statusCode==='000000');
+        })
+    };
 
     //新增
     router.post('/', async (req, res) => {
@@ -99,6 +157,36 @@ module.exports = app => {
         res.send(item);
     })
 
+    //用户新增点赞
+    router.post('/agreeUpdate/:phone', async (req, res) => {
+        const item = await req.Model.update({phone: req.params.phone},{$addToSet:{agree: req.body}});
+        res.send(item);
+    })
+
+    //用户删除点赞
+    router.post('/agreeDelete/:phone', async (req, res) => {
+        const item = await req.Model.update({phone: req.params.phone},{$pull: {agree: req.body}});
+        res.send(item);
+    })
+
+    //新增用户浏览记录
+    router.post('/recordUpdate/:phone', async (req, res) => {
+        const item = await req.Model.update({phone: req.params.phone},{$addToSet:{record: req.body}});
+        res.send(item);
+    })
+
+    //用户新增不喜欢
+    router.post('/dislikeUpdate/:phone', async (req, res) => {
+        const item = await req.Model.update({phone: req.params.phone},{$addToSet:{dislike: req.body}});
+        res.send(item);
+    })
+
+    //用户删除不喜欢
+    router.post('/dislikeDelete/:phone', async (req, res) => {
+        const item = await req.Model.update({phone: req.params.phone},{$pull: {dislike: req.body}});
+        res.send(item);
+    })
+
     //编辑
     router.put('/:id', async (req, res) => {
         const model = await req.Model.findByIdAndUpdate(req.params.id, req.body);
@@ -120,6 +208,19 @@ module.exports = app => {
         let file = req.file;
         file.url = `http://localhost:3000/uploads/${file.filename}`;
         res.send(file);
+    })
+
+    // 获取验证码
+    app.get('/wap/api/loginCode',async (req, res)=>{
+        let code = randomCode(6);
+        // sendCode("13433724756", code, function (success){
+        //     if(success){
+        //         res.send({message: '短信验证码发送成功！', code: code});
+        //     }else{
+        //         res.send({message: '短信验证码发送失败！'});
+        //     }
+        // })
+        res.send({message: '短信验证码发送成功！', code: code});
     })
 
     app.use('/wap/api/rest/:resource', async (req, res, next) => {

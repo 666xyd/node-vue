@@ -172,7 +172,7 @@
                     content: this.content,
                     date: utils.getCurrentTime(),
                     like: 0,
-                    share: 0,
+                    view: 0,
                     agree: 0,
                 }
 

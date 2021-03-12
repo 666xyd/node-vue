@@ -5,7 +5,7 @@
                 <div class="flex flex-around">
                     <div class="operation-card" v-for="(item, index) in operation" :key="index">
                         <van-icon :name="item.click ? item.iconClick : item.icon" :class="{isClick:item.click, dislike: index === 2}"
-                                  @click="clickItem(item)"/>{{index !== 2 ? (article[item.title] || 0) : '不喜欢'}}
+                                  @click="clickItem(item,index)"/>{{index !== 2 ? (article[item.title] || 0) : '不喜欢'}}
                     </div>
                 </div>
             </van-tab>
@@ -59,11 +59,12 @@
                     { icon: 'like-o', iconClick: 'like', click: false, title: 'like'},
                     { icon: 'good-job-o', iconClick: 'good-job', click: false, title: 'agree'},
                     { icon: 'good-job-o', iconClick: 'good-job', click: false, title: 'dislike'},
-                    { icon: 'share-o', iconClick: 'share', click: false, title: 'share'},
+                    { icon: 'eye-o', iconClick: 'eye', click: false, title: 'view'},
                 ],
                 message:'',
                 user_info: {},
                 evaluateList: [],
+
             }
         },
         props: {
@@ -76,42 +77,71 @@
                 },
             }
         },
-        created() {
-            this.getEvaluateList();
+        async created() {
+            await this.getUserInfo();
+            await this.getEvaluateList();
         },
         methods: {
-            async clickItem(item){
+            //获取用户对于该文章的点赞喜欢情况
+            getUserInfo(){
+                this.$http.get(`rest/appUserInfo/userPhone/${localStorage.phone}`).then((res)=>{
+                    let user = res.data[0];
+                    for(let i = 0; i < user.like.length; i++){
+                        if(user.like[i].id.split(' ')[1] === this.$route.params.id){
+                            this.operation[0].click = true;
+                        }
+                    }
+                    for(let i = 0; i < user.agree.length; i++){
+                        if(user.agree[i].id.split(' ')[1] === this.$route.params.id){
+                            this.operation[1].click = true;
+                        }
+                    }
+                    for(let i = 0; i < user.dislike.length; i++){
+                        if(user.dislike[i].id.split(' ')[1] === this.$route.params.id){
+                            this.operation[2].click = true;
+                        }
+                    }
+                })
+            },
+
+            async clickItem(item,index){
                 let user = {};
                 await this.getStore('user_info').then((res)=>{
                     user = res[0];
                 })
-                item.click = !item.click;
-                if(item.index !== 2){
-                    if(item.click){
-                        this.article[item.title] +=1;
-                        this.$http.post(`rest/appUserInfo/${item.title}Update/${user.phone}`, {id: this.article._id});
+                if(index !== 3){
+                    item.click = !item.click;
+                    if(index !== 2){
+                        if(item.click){
+                            this.article[item.title] +=1;
+                            this.$http.post(`rest/appUserInfo/${item.title}Update/${user.phone}`, {id: 'article' + ' ' + this.article._id});
+                        }else{
+                            this.article[item.title] -=1;
+                            this.$http.post(`rest/appUserInfo/${item.title}Delete/${user.phone}`, {id: 'article' + ' ' + this.article._id});
+                        }
+                        let params = {};
+                        params[item.title] = this.article[item.title];
+                        this.$http.put(`rest/articleInfo/${this.$route.params.id}`,params).then((res)=>{
+                            this.$emit('clickItem');
+                        })
                     }else{
-                        this.article[item.title] -=1;
-                        this.$http.post(`rest/appUserInfo/${item.title}Delete/${user.phone}`, {id: this.article._id});
+                        if(item.click){
+                            this.$http.post(`rest/appUserInfo/${item.title}Update/${user.phone}`, {id: 'article' + ' ' + this.article._id});
+                        }else{
+                            this.$http.post(`rest/appUserInfo/${item.title}Delete/${user.phone}`, {id: 'article' + ' ' + this.article._id});
+                        }
                     }
-                    let params = {};
-                    params[item.title] = this.article[item.title];
-                    this.$http.put(`rest/articleInfo/${this.$route.params.id}`,params).then((res)=>{
-                        this.$emit('clickItem');
-                    })
-                };
+                }
             },
 
             //获取评论
             getEvaluateList(){
                 this.$http.get(`rest/evaluate/evaluateArticleId/${this.$route.params.id}`).then((res)=>{
                     this.evaluateList = res.data;
-                    this.getStore('user_info').then((res)=>{
-                        let user = res[0];
-                        for(let i = 0; i < this.evaluateList.length; i++){
-                            this.evaluateList[i].isDelete = this.evaluateList[i].name === user.name
-                        }
-                    })
+
+                    for(let i = 0; i < this.evaluateList.length; i++){
+                        this.evaluateList[i].isDelete = this.evaluateList[i].user.phone === Number(localStorage.phone);
+                    }
                 })
             },
 

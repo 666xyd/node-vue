@@ -8,7 +8,7 @@ const schema = new mongoose.Schema({
     content: {type: String},
     like: {type: Number},
     agree: {type: Number},
-    share: {type: Number},
+    view: {type: Number},
 })
 
 module.exports = mongoose.model('ArticleInfo', schema)

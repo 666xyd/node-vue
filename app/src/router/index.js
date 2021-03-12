@@ -22,6 +22,10 @@ import heroDetail from "../hero/heroDetail";
 
 //我的
 import mine from "../mine/mine";
+import like from "../mine/like";
+import agree from "../mine/agree";
+import record from "../mine/record";
+import setting from "../mine/setting";
 
 
 Vue.use(VueRouter)
@@ -48,8 +52,12 @@ const routes = [
             {path: 'hero', name: 'hero', component: hero, meta: {index: 2.0}},
             {path: 'hero/detail/:id', name: 'heroDetail', component: heroDetail, meta: {index: 20}},    //英雄详情
 
-            //装备
+            //我的
             {path: 'mine', name: 'mine', component: mine, meta: {index: 3.0}},
+            {path: 'mine/like', name: 'like', component: like, meta: {index: 30}},
+            {path: 'mine/agree', name: 'agree', component: agree, meta: {index: 30.1}},
+            {path: 'mine/record', name: 'record', component: record, meta: {index: 30.2}},
+            {path: 'mine/setting', name: 'setting', component: setting, meta: {index: 30.3}},
         ]
     }
 ]
